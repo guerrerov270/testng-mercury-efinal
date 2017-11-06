@@ -1,123 +1,114 @@
 package pageObjects;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
 import base.PageBase;
 
 /**
- * Clase que contiene los WebElements de http://newtours.demoaut.com/mercuryreservation.php
- * @author anamariaquinteroleal
- *
+ * @author finguerrero
+ * @version 06/11/2017
+ * @see <a href = "https://github.com/guerrerov270/testng-mercury-efinal" />
+ *      Repositorio del proyecto en Github </a>
  */
 public class FindFlightPage extends PageBase {
 
 	public FindFlightPage(WebDriver driver, String pageTitle) {
 		super(driver, pageTitle);
-	}
+	} // Fin constructor
 
-	// WebElements Flight Details
-
-	/**
-	 * Área Flight Details
-	 */
-	// RadioButtons Individuales
+	// Web elements flights details
 	@FindBy(how = How.CSS, using = "[name='tripType'][value*='roundtrip']")
-	private WebElement rbtnRoundTrip;
-	@FindBy(how = How.XPATH, using = "//input[@name='tripType'][contains(@value,'oneway')]")
-	private WebElement rbtnOneWay;
-	// WebElement radio button trip type
-	@FindBy(how = How.NAME, using = "tripType")
-	private WebElement radioButton;
-	@FindBy(how = How.NAME, using = "tripType")
-	private List<WebElement> radioButtonOptions;
+	private WebElement radioRoundTrip;
+	@FindBy(how = How.CSS, using = "[name='tripType'][value*='oneway']")
+	private WebElement radioOneWay;
 
 	@FindBy(how = How.NAME, using = "passCount")
-	private WebElement comboPassengers;
+	private WebElement selectPassengers;
 	@FindBy(how = How.NAME, using = "fromPort")
-	private WebElement comboDepartingFrom;
+	private WebElement selectDepartingFrom;
 	@FindBy(how = How.NAME, using = "fromMonth")
-	private WebElement comboOnMonth;
+	private WebElement selectMonthIni;
 	@FindBy(how = How.NAME, using = "fromDay")
-	private WebElement comboOnDay;
+	private WebElement selectDayIni;
 	@FindBy(how = How.NAME, using = "toPort")
-	private WebElement comboArrivingIn;
+	private WebElement selectArrivingIn;
 	@FindBy(how = How.NAME, using = "toMonth")
-	private WebElement comboToMonth;
+	private WebElement selectReturning;
 	@FindBy(how = How.NAME, using = "toDay")
-	private WebElement comboToDay;
+	private WebElement selectDayEnd;
 
-	/**
-	 * Área Preferences
-	 */
-	// WebElement radio button Service Class
-	@FindBy(how = How.NAME, using = "servClass")
-	private WebElement radioButtonservClass;
-	@FindBy(how = How.NAME, using = "servClass")
-	private List<WebElement> radioButtonservClassOptions;
-	
+	// Web elements preferences
+	@FindBy(how = How.CSS, using = "[name='servClass'][value*='Coach']")
+	private WebElement radioEconomyClass;
+	@FindBy(how = How.CSS, using = "[name='servClass'][value*='Business']")
+	private WebElement radioBussinessClass;
+	@FindBy(how = How.CSS, using = "[name='servClass'][value*='First']")
+	private WebElement radioFirstClass;
+
 	@FindBy(how = How.NAME, using = "airline")
-	private WebElement comboAirline;
-	
-	//Botón Continue
+	private WebElement selectAirline;
+
+	// Botón continue
 	@FindBy(how = How.NAME, using = "findFlights")
-	private WebElement btnContinue;
+	private WebElement buttonContinue;
 
-	
-	/**
-	 * Getters
-	 */
-	
-	public WebElement getRbtnRoundTrip() {
-		return rbtnRoundTrip;
-	}
-	public WebElement getRbtnOneWay() {
-		return rbtnOneWay;
-	}
-	public List<WebElement> getRadioButtonOptions() {
-		return radioButtonOptions;
-	}
-	public WebElement getRadioButton() {
-		return radioButton;
-	}
-	public WebElement getComboPassengers() {
-		return comboPassengers;
-	}
-	public WebElement getComboDepartingFrom() {
-		return comboDepartingFrom;
-	}
-	public WebElement getComboOnMonth() {
-		return comboOnMonth;
-	}
-	public WebElement getComboOnDay() {
-		return comboOnDay;
-	}
-	public WebElement getComboArrivingIn() {
-		return comboArrivingIn;
-	}
-	public WebElement getComboToMonth() {
-		return comboToMonth;
-	}
-	public WebElement getComboToDay() {
-		return comboToDay;
-	}
-	public WebElement getRadioButtonservClass() {
-		return radioButtonservClass;
-	}
-	public List<WebElement> getRadioButtonservClassOptions() {
-		return radioButtonservClassOptions;
-	}
-	public WebElement getComboAirline() {
-		return comboAirline;
-	}
-	public WebElement getBtnContinue() {
-		return btnContinue;
+	// Método get para cada elemento
+	public WebElement getRadioRoundTrip() {
+		return radioRoundTrip;
 	}
 
-	
-	
-}
+	public WebElement getRadioOneWay() {
+		return radioOneWay;
+	}
+
+	public WebElement getSelectPassengers() {
+		return selectPassengers;
+	}
+
+	public WebElement getSelectDepartingFrom() {
+		return selectDepartingFrom;
+	}
+
+	public WebElement getSelectMonthIni() {
+		return selectMonthIni;
+	}
+
+	public WebElement getSelectDayIni() {
+		return selectDayIni;
+	}
+
+	public WebElement getSelectArrivingIn() {
+		return selectArrivingIn;
+	}
+
+	public WebElement getSelectReturning() {
+		return selectReturning;
+	}
+
+	public WebElement getSelectDayEnd() {
+		return selectDayEnd;
+	}
+
+	public WebElement getRadioEconomyClass() {
+		return radioEconomyClass;
+	}
+
+	public WebElement getRadioBussinessClass() {
+		return radioBussinessClass;
+	}
+
+	public WebElement getRadioFirstClass() {
+		return radioFirstClass;
+	}
+
+	public WebElement getSelectAirline() {
+		return selectAirline;
+	}
+
+	public WebElement getButtonContinue() {
+		return buttonContinue;
+	}
+
+} // Fin clase FindFlightPage

@@ -8,22 +8,36 @@ import org.openqa.selenium.support.How;
 import base.PageBase;
 
 /**
- * Clase que contiene los webElements de http://newtours.demoaut.com/mercurypurchase2.php
+ * Clase que contiene los webElements de
+ * http://newtours.demoaut.com/mercurypurchase2.php
+ * 
  * @author anamariaquinteroleal
  *
  */
-public class FlightConfirmationPage extends PageBase{
+public class FlightConfirmationPage extends PageBase {
 
 	public FlightConfirmationPage(WebDriver driver, String pageTitle) {
 		super(driver, pageTitle);
 	}
-	
-	//Botones
-	@FindBy(how=How.CSS, using="")
-	private WebElement buttonBackFlights;
-	@FindBy(how=How.XPATH, using="")
-	private WebElement buttonBackHome;
-	@FindBy(how=How.CSS, using="")
+
+	// Botones
+	@FindBy(how = How.CSS, using = "img[src='/images/forms/backtoflights.gif']")
+	private WebElement buttonBackToFlights;
+	@FindBy(how = How.CSS, using = "img[src='/images/forms/home.gif']")
+	private WebElement buttonBackToHome;
+	@FindBy(how = How.CSS, using = "img[src='/images/forms/Logout.gif']")
 	private WebElement buttonLogOut;
-	
+
+	// Método get para cada elemento
+	public WebElement getButtonBackToFlights() {
+		return buttonBackToFlights;
+	}
+
+	public WebElement getButtonBackToHome() {
+		return buttonBackToHome;
+	}
+
+	public WebElement getButtonLogOut() {
+		return buttonLogOut;
+	}
 }

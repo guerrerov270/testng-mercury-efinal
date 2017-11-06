@@ -23,18 +23,18 @@ public class SelectFlightPage extends PageBase{
 	//WebElements Select Flights
 	
 	//Área DEPART
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "outFlight")
 	private WebElement radioButtonoutFlight;
 	@FindBy(how = How.NAME, using = "")
 	private List<WebElement> radioButtonoutFlightOptions;
 
 	//Área RETURN
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "inFlight")
 	private WebElement radioButtoninFlight;
 	@FindBy(how = How.NAME, using = "")
 	private List<WebElement> radioButtoninFlightOptions;
 	
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "reserveFlights")
 	private WebElement btnContinue;
 
 	public WebElement getRadioButtonoutFlight() {
