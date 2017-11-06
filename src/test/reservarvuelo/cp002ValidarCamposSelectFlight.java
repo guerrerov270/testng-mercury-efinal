@@ -35,16 +35,39 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 
 			// verifico los elementos en la página
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioButtonoutFlight()))) {
+					.getRadioFlight0D()))) {
 				Assert.fail("No se encontró el radio button Blue Skies Airlines 360");
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioButtoninFlight()))) {
+					.getRadioFlight1D()))) {
 				Assert.fail("No se encontró el radio button Blue Skies Airlines 361");
 			}
-
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getBtnContinue()))) {
+					.getRadioFlight2D()))) {
+				Assert.fail("No se encontró el radio button Pangaea Airlines 362");
+			}
+			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+					.getRadioFlight3D()))) {
+				Assert.fail("No se encontró el radio button Unified Airlines 363");
+			}
+			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+					.getRadioFlight0R()))) {
+				Assert.fail("No se encontró el radio button Blue Skies Airlines 630");
+			}
+			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+					.getRadioFlight1R()))) {
+				Assert.fail("No se encontró el radio button Blue Skies Airlines 631");
+			}
+			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+					.getRadioFlight2R()))) {
+				Assert.fail("No se encontró el radio button Pangaea Airlines 632");
+			}
+			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+					.getRadioFlight3R()))) {
+				Assert.fail("No se encontró el radio button Unified Airlines 633");
+			}
+			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+					.getButtonContinue()))) {
 				Assert.fail("No se encontró el botón Continue");
 			}
 

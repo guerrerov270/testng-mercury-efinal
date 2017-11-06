@@ -111,4 +111,45 @@ public class FindFlightPage extends PageBase {
 		return buttonContinue;
 	}
 
+	/**
+	 * Método para seleccionar las opciones en la página de flight finder a
+	 * partir de los parámetros recibidos
+	 * 
+	 * @param tripType
+	 * @param passengers
+	 * @param departing
+	 * @param monthIni
+	 * @param dayIni
+	 * @param arrivingIn
+	 * @param monthEnd
+	 * @param dayEnd
+	 * @param serviceClass
+	 * @param airline
+	 */
+	public void seleccionFindFlight(String tripType, String passengers,
+			String departing, String monthIni, String dayIni,
+			String arrivingIn, String monthEnd, String dayEnd,
+			String serviceClass, String airline) {
+
+		if (tripType.equals("Round trip"))
+			selectRadioButton(radioRoundTrip);
+		if (tripType.equals("One way"))
+			selectRadioButton(radioOneWay);
+		selectDropdownVisibleText(selectPassengers, passengers);
+		selectDropdownVisibleText(selectDepartingFrom, departing);
+		selectDropdownVisibleText(selectMonthIni, monthIni);
+		selectDropdownVisibleText(selectDayIni, dayIni);
+		selectDropdownVisibleText(selectArrivingIn, arrivingIn);
+		selectDropdownVisibleText(selectReturning, monthEnd);
+		selectDropdownVisibleText(selectDayEnd, dayEnd);
+		if (serviceClass.equals("Economy class"))
+			selectRadioButton(radioEconomyClass);
+		if (serviceClass.equals("Business class"))
+			selectRadioButton(radioBussinessClass);
+		if (serviceClass.equals("First class"))
+			selectRadioButton(radioFirstClass);
+		selectDropdownVisibleText(selectAirline, airline);
+		clickButtonLink(buttonContinue);
+	}// Fin método seleccionFindFlight
+
 } // Fin clase FindFlightPage

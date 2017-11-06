@@ -36,7 +36,7 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 		findFlight = new FindFlightPage(driver, pageTitleFind);
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
-		selectFlight.clickButtonLink(selectFlight.getBtnContinue());
+		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
 		bookFlight = new BookFlightPage(driver, pageTitleBook);
 		// Clic en botón Secure purchase
 		bookFlight.clickButtonLink(bookFlight.getButtonBuyFlights());

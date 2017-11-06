@@ -181,4 +181,62 @@ public class BookFlightPage extends PageBase {
 		return checkTicketLess;
 	}
 
+	public void seleccionBookAFlight(String firstName, String lastName,
+			String meal, String cardType, String cardNumber, String expCMonth,
+			String expCYear, String cardFirstName, String cardMiddleNane,
+			String cardLastName, boolean ticketless, String address1Bill,
+			String address2Bill, String cityBill, String stateBill,
+			String postalCodeBill, String countryBill,
+			boolean sameAsBillingAddress, String address1Del,
+			String address2Del, String cityDel, String stateDel,
+			String postalCodeDel, String countryDel) {
+
+		sendText(inputFirstName, firstName);
+		sendText(inputLastName, lastName);
+		selectDropdownVisibleText(comboMeal, meal);
+
+		selectDropdownVisibleText(comboCardType, cardType);
+		sendText(inputNumber, cardNumber);
+		selectDropdownVisibleText(comboExpirationMonth, expCMonth);
+		selectDropdownVisibleText(comboExpirationYear, expCYear);
+		sendText(inputFirstNameCard, cardFirstName);
+		sendText(inputMiddleNameCard, cardMiddleNane);
+		sendText(inputLastNameCard, cardLastName);
+
+		if (ticketless) {
+			// Selecciono el check
+			checkTicketLess.click();
+		}
+
+		inputBillAddress1.clear();
+		sendText(inputBillAddress1, address1Bill);
+		sendText(inputBillAddress2, address2Bill);
+		inputBillCity.clear();
+		sendText(inputBillCity, cityBill);
+		inputBillState.clear();
+		sendText(inputBillState, stateBill);
+		inputBillPostal.clear();
+		sendText(inputBillPostal, postalCodeBill);
+		selectDropdownVisibleText(comboBillCountry, countryBill);
+
+		if (sameAsBillingAddress) {
+			// Selecciono el check
+			checkBillingAddress.click();
+		}
+
+		inputDelAddress1.clear();
+		sendText(inputDelAddress1, address1Del);
+		sendText(inputDelAddress2, address2Del);
+		inputDelCity.clear();
+		sendText(inputDelCity, cityDel);
+		inputDelState.clear();
+		sendText(inputDelState, stateDel);
+		inputDelPostal.clear();
+		sendText(inputDelPostal, postalCodeDel);
+		selectDropdownVisibleText(comboDelCountry, countryDel);
+
+		clickButtonLink(buttonBuyFlights);
+
+	}// Fin método seleccionBookAFlight
+
 }

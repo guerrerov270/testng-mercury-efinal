@@ -40,4 +40,23 @@ public class FlightConfirmationPage extends PageBase {
 	public WebElement getButtonLogOut() {
 		return buttonLogOut;
 	}
+
+	public void seleccionarBotonFlightConfirmation(String eleccion) {
+
+		switch (eleccion) {
+		case "vuelos":
+			clickButtonLink(buttonBackToFlights);
+			break;
+		case "home":
+			clickButtonLink(buttonBackToHome);
+			break;
+		case "salir":
+			clickButtonLink(buttonLogOut);
+			break;
+
+		default:
+			break;
+		}
+
+	}// Fin método seleccionarBotonFlightConfirmation
 }

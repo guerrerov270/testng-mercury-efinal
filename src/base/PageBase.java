@@ -189,4 +189,20 @@ public class PageBase {
 		}
 		return result;
 	}
+	
+	/**
+	 * Método que permite realizar una selección en un radio button
+	 * @param elemento
+	 * @return true o false
+	 */
+	public boolean selectRadioButton(WebElement elemento) {
+		// Variable para definir la resouesta del método
+		boolean result = true;
+		if(isElementPresentAndDisplay(elemento)){
+			clickButtonLink(elemento);
+		}else{
+			result = false;
+		}
+		return result;
+	}// Fin método selectRadioButton
 }

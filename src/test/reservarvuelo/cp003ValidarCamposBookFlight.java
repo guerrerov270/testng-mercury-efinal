@@ -32,7 +32,7 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 		findFlight = new FindFlightPage(driver, pageTitleFind);
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
-		selectFlight.clickButtonLink(selectFlight.getBtnContinue());
+		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
 		bookFlight = new BookFlightPage(driver, pageTitleBook);
 
 		// Validar que esté en la página Book a flight
