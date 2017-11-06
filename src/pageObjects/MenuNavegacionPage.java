@@ -47,49 +47,63 @@ public class MenuNavegacionPage extends PageBase {
 
 	/**
 	 * Métodos get, proporcionan acceso desde otras clases a los WebElements
+	 * 
 	 * @return
 	 */
 	public WebElement getLnkSingOn() {
 		return lnkSignOn;
 	}
+
 	public WebElement getLnkSingOf() {
 		return lnkSignOf;
 	}
+
 	public WebElement getLnkRegister() {
 		return lnkRegister;
 	}
+
 	public WebElement getLnkSupport() {
 		return lnkSupport;
 	}
+
 	public WebElement getLnkContact() {
 		return lnkContact;
 	}
+
 	public WebElement getLnkItinerary() {
 		return lnkItinerary;
 	}
+
 	public WebElement getLnkProfile() {
 		return lnkProfile;
 	}
+
 	public WebElement getLnkHome() {
 		return lnkHome;
 	}
+
 	public WebElement getLnkFlights() {
 		return lnkFlights;
 	}
+
 	public WebElement getLnkHotels() {
 		return lnkHotels;
 	}
+
 	public WebElement getLnkCarRentals() {
 		return lnkCarRentals;
 	}
+
 	public WebElement getLnkCruises() {
 		return lnkCruises;
 	}
+
 	public WebElement getLnkDestinations() {
 		return lnkDestinations;
 	}
+
 	public WebElement getLnkVacations() {
 		return lnkVacations;
 	}
-	
+
 }

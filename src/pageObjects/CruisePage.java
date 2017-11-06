@@ -8,22 +8,23 @@ import org.openqa.selenium.support.How;
 import base.PageBase;
 
 /**
- * Clase que contiene los WebElements de http://newtours.demoaut.com/mercurycruise.php
+ * Clase que contiene los WebElements de
+ * http://newtours.demoaut.com/mercurycruise.php
+ * 
  * @author anamariaquinteroleal
  *
  */
-public class CruisePage extends PageBase{
+public class CruisePage extends PageBase {
 
 	public CruisePage(WebDriver driver, String pageTitle) {
 		super(driver, pageTitle);
 	}
 
-	@FindBy (how=How.XPATH, using="//img[@alt='Reservations Open']")
+	@FindBy(how = How.XPATH, using = "//img[@alt='Reservations Open']")
 	private WebElement lnkNowAccepting;
 
 	public WebElement getLnkNowAccepting() {
 		return lnkNowAccepting;
 	}
-	
-	
+
 }
