@@ -1,18 +1,31 @@
 package test.reservarvuelo;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import java.io.IOException;
 
+import org.testng.annotations.Test;
 import base.TestBase;
 import pageObjects.FindFlightPage;
 import pageObjects.SelectFlightPage;
 import test.autenticacion.cp002LoginMercuryCorrecto;
+import utils.ElementoNoEncontradoException;
+import utils.ExcelUtils;
+import utils.ExcelUtils.ExcelType;
 
 public class cp002ValidarCamposSelectFlight extends TestBase {
 
 	cp002LoginMercuryCorrecto login;
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
+	static ExcelUtils excelCamposSelectFlight;
+	private String nombreFlight360 = "";
+	private String nombreFlight361 = "";
+	private String nombreFlight362 = "";
+	private String nombreFlight363 = "";
+	private String nombreFlight630 = "";
+	private String nombreFlight631 = "";
+	private String nombreFlight632 = "";
+	private String nombreFlight633 = "";
+	private String nombreButtonContinue = "";
 	String pageTitle = "Welcome: Mercury Tours";
 	String pageTitleFind = "Find a Flight: Mercury Tours";
 	String pageTitleSelect = "Select a Flight: Mercury Tours";
@@ -30,50 +43,70 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
 
-		// Validar que se encuentre en la página Select a Flight: Mercury Tours
-		if (selectFlight.getTitle().equals(pageTitleSelect)) {
+		try {
+			excelCamposSelectFlight = new ExcelUtils("CamposSelectFlight.xlsx",
+					ExcelType.XLSX);
+			nombreFlight360 = excelCamposSelectFlight.getCellData(1, 0);
+			nombreFlight361 = excelCamposSelectFlight.getCellData(2, 0);
+			nombreFlight362 = excelCamposSelectFlight.getCellData(3, 0);
+			nombreFlight363 = excelCamposSelectFlight.getCellData(4, 0);
+			nombreFlight630 = excelCamposSelectFlight.getCellData(5, 0);
+			nombreFlight631 = excelCamposSelectFlight.getCellData(6, 0);
+			nombreFlight632 = excelCamposSelectFlight.getCellData(7, 0);
+			nombreFlight633 = excelCamposSelectFlight.getCellData(8, 0);
+			nombreButtonContinue = excelCamposSelectFlight.getCellData(9, 0);
 
+		} catch (IOException e1) {
+
+			System.out
+					.println("*******************ATENCIÓN*******************************");
+			System.out.println(e1.getMessage());
+			System.out
+					.println("**********************************************************");
+		}
+
+		// Validar que se encuentre en la página Select a Flight: Mercury Tours
+		try {
 			// verifico los elementos en la página
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight0D()))) {
-				Assert.fail("No se encontró el radio button Blue Skies Airlines 360");
+				throw new ElementoNoEncontradoException(nombreFlight360);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight1D()))) {
-				Assert.fail("No se encontró el radio button Blue Skies Airlines 361");
+				throw new ElementoNoEncontradoException(nombreFlight361);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight2D()))) {
-				Assert.fail("No se encontró el radio button Pangaea Airlines 362");
+				throw new ElementoNoEncontradoException(nombreFlight362);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight3D()))) {
-				Assert.fail("No se encontró el radio button Unified Airlines 363");
+				throw new ElementoNoEncontradoException(nombreFlight363);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight0R()))) {
-				Assert.fail("No se encontró el radio button Blue Skies Airlines 630");
+				throw new ElementoNoEncontradoException(nombreFlight630);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight1R()))) {
-				Assert.fail("No se encontró el radio button Blue Skies Airlines 631");
+				throw new ElementoNoEncontradoException(nombreFlight631);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight2R()))) {
-				Assert.fail("No se encontró el radio button Pangaea Airlines 632");
+				throw new ElementoNoEncontradoException(nombreFlight632);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getRadioFlight3R()))) {
-				Assert.fail("No se encontró el radio button Unified Airlines 633");
+				throw new ElementoNoEncontradoException(nombreFlight633);
 			}
 			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
 					.getButtonContinue()))) {
-				Assert.fail("No se encontró el botón Continue");
+				throw new ElementoNoEncontradoException(nombreButtonContinue);
 			}
-
-		} else {
-			Assert.fail("No se encuentra en la página Select Flight");
+		} catch (ElementoNoEncontradoException e1) {
+			System.out.println(e1.getDescripcion() + e1.getMessage());
 		}
-	}
+	} // Fin método ValidarCamposSelectFlight
+} // Fin clase cp002ValidarCamposSelectFlight
 
-}

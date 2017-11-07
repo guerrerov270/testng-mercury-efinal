@@ -46,7 +46,7 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 		findFlight = new FindFlightPage(driver, pageTitleFind);
 
 		try {
-			excelCamposFindFlight = new ExcelUtils("amposFindFlight.xlsx",
+			excelCamposFindFlight = new ExcelUtils("CamposFindFlight.xlsx",
 					ExcelType.XLSX);
 			nombreRadioRoundTrip = excelCamposFindFlight.getCellData(1, 0);
 			nombreRadioOneWay = excelCamposFindFlight.getCellData(2, 0);
