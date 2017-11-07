@@ -16,6 +16,9 @@ public class FindFlightPage extends PageBase {
 
 	public FindFlightPage(WebDriver driver, String pageTitle) {
 		super(driver, pageTitle);
+
+		// nombreRadioRoundTrip=
+
 	} // Fin constructor
 
 	// Web elements flights details

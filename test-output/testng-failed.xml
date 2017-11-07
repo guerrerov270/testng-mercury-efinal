@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="test.reservarvuelo.cp004ValidarCamposConfirmationFlight">
+      <class name="test.reservarvuelo.cp001ValidarCamposFindFlight">
         <methods>
-          <include name="ValidarCamposConfirmationFlight"/>
-          <include name="initializeTestBaseSetup"/>
           <include name="login"/>
+          <include name="initializeTestBaseSetup"/>
+          <include name="ValidarCamposFindFlight"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- test.reservarvuelo.cp004ValidarCamposConfirmationFlight -->
+      </class> <!-- test.reservarvuelo.cp001ValidarCamposFindFlight -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
