@@ -1,5 +1,7 @@
 package test.reservarvuelo;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,6 +10,9 @@ import pageObjects.BookFlightPage;
 import pageObjects.FindFlightPage;
 import pageObjects.SelectFlightPage;
 import test.autenticacion.cp002LoginMercuryCorrecto;
+import utils.ElementoNoEncontradoException;
+import utils.ExcelUtils;
+import utils.ExcelUtils.ExcelType;
 
 public class cp003ValidarCamposBookFlight extends TestBase {
 
@@ -15,10 +20,37 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
+	static ExcelUtils excelCamposBookFlight;
+	private String nombreInputFirstName = "";
+	private String nombreInputLastName = "";
+	private String nombreComboMeal = "";
+	private String nombreComboCardType = "";
+	private String nombreInputNumber = "";
+	private String nombreComboExpirationMonth = "";
+	private String nombreComboExpirationYear = "";
+	private String nombreInputFirstNameCard = "";
+	private String nombreInputMiddleNameCard = "";
+	private String nombreInputLastNameCard = "";
+	private String nombreCheckTicketLess = "";
+	private String nombreInputBillAddress1 = "";
+	private String nombreInputBillAddress2 = "";
+	private String nombreInputBillCity = "";
+	private String nombreInputBillState = "";
+	private String nombreInputBillPostal = "";
+	private String nombreComboBillCountry = "";
+	private String nombreCheckBillingAddress = "";
+	private String nombreInputDelAddress1 = "";
+	private String nombreInputDelAddress2 = "";
+	private String nombreInputDelCity = "";
+	private String nombreInputDelState = "";
+	private String nombreInputDelPostal = "";
+	private String nombreComboDelCountry = "";
+	private String nombreButtonBuyFlights = "";
 	String pageTitle = "Welcome: Mercury Tours";
 	String pageTitleFind = "Find a Flight: Mercury Tours";
 	String pageTitleSelect = "Select a Flight: Mercury Tours";
 	String pageTitleBook = "Book a Flight: Mercury Tours";
+	
 
 	@Test
 	public void login() {
@@ -34,119 +66,156 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
 		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
 		bookFlight = new BookFlightPage(driver, pageTitleBook);
+		
+		try {
+			excelCamposBookFlight = new ExcelUtils("CamposBookAFlight.xlsx",
+					ExcelType.XLSX);
+			nombreInputFirstName = excelCamposBookFlight.getCellData(1, 0);
+			nombreInputLastName = excelCamposBookFlight.getCellData(2, 0);
+			nombreComboMeal = excelCamposBookFlight.getCellData(3, 0);
+			nombreComboCardType = excelCamposBookFlight.getCellData(4, 0);
+			nombreInputNumber = excelCamposBookFlight.getCellData(5, 0);
+			nombreComboExpirationMonth = excelCamposBookFlight.getCellData(6, 0);
+			nombreComboExpirationYear = excelCamposBookFlight.getCellData(7, 0);
+			nombreInputFirstNameCard = excelCamposBookFlight.getCellData(8, 0);
+			nombreInputMiddleNameCard = excelCamposBookFlight.getCellData(9, 0);
+			nombreInputLastNameCard = excelCamposBookFlight.getCellData(10, 0);
+			nombreCheckTicketLess = excelCamposBookFlight.getCellData(11, 0);
+			nombreInputBillAddress1 = excelCamposBookFlight.getCellData(12, 0);
+			nombreInputBillAddress2 = excelCamposBookFlight.getCellData(13, 0);
+			nombreInputBillCity = excelCamposBookFlight.getCellData(14, 0);
+			nombreInputBillState = excelCamposBookFlight.getCellData(15, 0);
+			nombreInputBillPostal = excelCamposBookFlight.getCellData(16, 0);
+			nombreComboBillCountry = excelCamposBookFlight.getCellData(17, 0);
+			nombreCheckBillingAddress = excelCamposBookFlight.getCellData(18, 0);
+			nombreInputDelAddress1 = excelCamposBookFlight.getCellData(19, 0);
+			nombreInputDelAddress2 = excelCamposBookFlight.getCellData(20, 0);
+			nombreInputDelCity = excelCamposBookFlight.getCellData(21, 0);
+			nombreInputDelState = excelCamposBookFlight.getCellData(22, 0);
+			nombreInputDelPostal = excelCamposBookFlight.getCellData(23, 0);
+			nombreComboDelCountry = excelCamposBookFlight.getCellData(24, 0);
+			nombreButtonBuyFlights = excelCamposBookFlight.getCellData(25, 0);
+
+		} catch (IOException e2) {
+
+			System.out
+					.println("*******************ATENCIÓN*******************************");
+			System.out.println(e2.getMessage());
+			System.out
+					.println("**********************************************************");
+		}
 
 		// Validar que esté en la página Book a flight
-		if (bookFlight.getTitle().equals(pageTitleBook)) {
+		try {
 			// Validar los campos del área Passengers
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputFirstName()))) {
-				Assert.fail("No se encontró el input first name 0");
+				throw new ElementoNoEncontradoException(nombreInputFirstName);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputLastName()))) {
-				Assert.fail("No se encontró el input last name 0");
+				throw new ElementoNoEncontradoException(nombreInputLastName);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboMeal()))) {
-				Assert.fail("No se encontró el select meal 0");
+				throw new ElementoNoEncontradoException(nombreComboMeal);
 			}
 			// Validar los campos del área área Credit Card
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboCardType()))) {
-				Assert.fail("No se encontró el select credit card");
+				throw new ElementoNoEncontradoException(nombreComboCardType);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputNumber()))) {
-				Assert.fail("No se encontró el input credit number");
+				throw new ElementoNoEncontradoException(nombreInputNumber);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboExpirationMonth()))) {
-				Assert.fail("No se encontró el select expirate month cc");
+				throw new ElementoNoEncontradoException(nombreComboExpirationMonth);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboExpirationYear()))) {
-				Assert.fail("No se encontró el select expirate year cc");
+				throw new ElementoNoEncontradoException(nombreComboExpirationYear);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputFirstNameCard()))) {
-				Assert.fail("No se encontró el input first name cc");
+				throw new ElementoNoEncontradoException(nombreInputFirstNameCard);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputMiddleNameCard()))) {
-				Assert.fail("No se encontró el input middle name cc");
+				throw new ElementoNoEncontradoException(nombreInputMiddleNameCard);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputLastNameCard()))) {
-				Assert.fail("No se encontró el input last name cc");
+				throw new ElementoNoEncontradoException(nombreInputLastNameCard);
 			}
 			// Validar los campos del área área Billing address
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getCheckTicketLess()))) {
-				Assert.fail("No se encontró el check ticket less");
+				throw new ElementoNoEncontradoException(nombreCheckTicketLess);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputBillAddress1()))) {
-				Assert.fail("No se encontró el input bill address 1");
+				throw new ElementoNoEncontradoException(nombreInputBillAddress1);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputBillAddress2()))) {
-				Assert.fail("No se encontró el input bill address 2");
+				throw new ElementoNoEncontradoException(nombreInputBillAddress2);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputBillCity()))) {
-				Assert.fail("No se encontró el input bill city");
+				throw new ElementoNoEncontradoException(nombreInputBillCity);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputBillState()))) {
-				Assert.fail("No se encontró el input bill state");
+				throw new ElementoNoEncontradoException(nombreInputBillState);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputBillPostal()))) {
-				Assert.fail("No se encontró el input bill postal code");
+				throw new ElementoNoEncontradoException(nombreInputBillPostal);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboBillCountry()))) {
-				Assert.fail("No se encontró el select bill country");
+				throw new ElementoNoEncontradoException(nombreComboBillCountry);
 			}
 			// Validar los campos del área área Delivery address
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getCheckBillingAddress()))) {
-				Assert.fail("No se encontró el check billing address");
+				throw new ElementoNoEncontradoException(nombreCheckBillingAddress);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputDelAddress1()))) {
-				Assert.fail("No se encontró el input del address 1");
+				throw new ElementoNoEncontradoException(nombreInputDelAddress1);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputDelAddress2()))) {
-				Assert.fail("No se encontró el input del address 2");
+				throw new ElementoNoEncontradoException(nombreInputDelAddress2);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputDelCity()))) {
-				Assert.fail("No se encontró el input del city");
+				throw new ElementoNoEncontradoException(nombreInputDelCity);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputDelState()))) {
-				Assert.fail("No se encontró el input del state");
+				throw new ElementoNoEncontradoException(nombreInputDelState);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputDelPostal()))) {
-				Assert.fail("No se encontró el input del postal code");
+				throw new ElementoNoEncontradoException(nombreInputDelPostal);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboDelCountry()))) {
-				Assert.fail("No se encontró el select del country");
+				throw new ElementoNoEncontradoException(nombreComboDelCountry);
 			}
 			// Validar el botón secure purchase
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getButtonBuyFlights()))) {
-				Assert.fail("No se encontró el button buy flights");
+				throw new ElementoNoEncontradoException(nombreButtonBuyFlights);
 			}
+		} catch (ElementoNoEncontradoException e3) {
+			System.out.println(e3.getDescripcion() + e3.getMessage());
+		}		
 
-		} else {
-			Assert.fail("No se encuentra en la página Book a Flight");
-		}
+	}// Fin método ValidarCamposBookFlight
 
-	}
-
-}
+}// Fin clase cp003ValidarCamposBookFlight
