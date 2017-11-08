@@ -1,5 +1,7 @@
 package test.reservarvuelo;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,6 +11,9 @@ import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.SelectFlightPage;
 import test.autenticacion.cp002LoginMercuryCorrecto;
+import utils.ElementoNoEncontradoException;
+import utils.ExcelUtils;
+import utils.ExcelUtils.ExcelType;
 
 public class cp004ValidarCamposConfirmationFlight extends TestBase {
 
@@ -17,6 +22,10 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
 	FlightConfirmationPage confirmationFlight;
+	static ExcelUtils excelCamposConfirmationFlight;
+	private String nombreButtonBackToFlights = "";
+	private String nombreButtonBackToHome = "";
+	private String nombreButtonLogOut = "";
 	String pageTitle = "Welcome: Mercury Tours";
 	String pageTitleFind = "Find a Flight: Mercury Tours";
 	String pageTitleSelect = "Select a Flight: Mercury Tours";
@@ -43,27 +52,44 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 		confirmationFlight = new FlightConfirmationPage(driver,
 				pageTitleConfirmation);
 
+		try {
+			excelCamposConfirmationFlight = new ExcelUtils(
+					"CamposConfirmationFlight.xlsx", ExcelType.XLSX);
+			nombreButtonBackToFlights = excelCamposConfirmationFlight.getCellData(1, 0);
+			nombreButtonBackToHome = excelCamposConfirmationFlight.getCellData(2, 0);
+			nombreButtonLogOut = excelCamposConfirmationFlight.getCellData(3, 0);
+
+		} catch (IOException e4) {
+
+			System.out
+					.println("*******************ATENCIÓN*******************************");
+			System.out.println(e4.getMessage());
+			System.out
+					.println("**********************************************************");
+		}
+
 		// Validar que esté en la página Book a flight
-		if (confirmationFlight.getTitle().equals(pageTitleConfirmation)) {
+		try {
 
 			// Validar estén presentes los tres botones
 			if (!(confirmationFlight
 					.isElementPresentAndDisplay(confirmationFlight
 							.getButtonBackToFlights()))) {
-				Assert.fail("No se encontró el botón back to flights");
+				throw new ElementoNoEncontradoException(
+						nombreButtonBackToFlights);
 			}
 			if (!(confirmationFlight
 					.isElementPresentAndDisplay(confirmationFlight
 							.getButtonBackToHome()))) {
-				Assert.fail("No se encontró el botón back to home");
+				throw new ElementoNoEncontradoException(nombreButtonBackToHome);
 			}
 			if (!(confirmationFlight
 					.isElementPresentAndDisplay(confirmationFlight
 							.getButtonLogOut()))) {
-				Assert.fail("No se encontró el botón log out");
+				throw new ElementoNoEncontradoException(nombreButtonLogOut);
 			}
-		} else {
-			Assert.fail("No se encuentra en la página Confirmation Flight");
+		} catch (ElementoNoEncontradoException e3) {
+			System.out.println(e3.getDescripcion() + e3.getMessage());
 		}
 
 	}
