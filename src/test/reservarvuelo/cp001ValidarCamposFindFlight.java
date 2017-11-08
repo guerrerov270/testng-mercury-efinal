@@ -16,9 +16,10 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 	cp002LoginMercuryCorrecto login;
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
-	String pageTitle = "Welcome: Mercury Tours";
-	String pageTitleFind = "Find a Flight: Mercury Tours";
+	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposFindFlight;
+	//private String pageTitle = "Welcome: Mercury Tours";
+	private String pageTitleFind = "";
 	private String nombreRadioRoundTrip = "";
 	private String nombreRadioOneWay = "";
 	private String nombreSelectPassengers = "";
@@ -42,7 +43,12 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 	}// Fin método login
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
-	public void ValidarCamposFindFlight(){
+	public void ValidarCamposFindFlight() throws Exception{
+		
+		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+				ExcelType.XLSX);
+		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
+		
 		findFlight = new FindFlightPage(driver, pageTitleFind);
 
 		try {

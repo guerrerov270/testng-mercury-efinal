@@ -1,5 +1,7 @@
 package test.reservarvuelo;
 
+
+
 import org.testng.annotations.Test;
 
 import base.TestBase;
@@ -8,6 +10,8 @@ import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.SelectFlightPage;
 import test.autenticacion.cp002LoginMercuryCorrecto;
+import utils.ExcelUtils;
+import utils.ExcelUtils.ExcelType;
 
 public class cp005ReservarVuelo extends TestBase {
 
@@ -16,15 +20,16 @@ public class cp005ReservarVuelo extends TestBase {
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
 	FlightConfirmationPage confirmationFlight;
-	String pageTitle = "Welcome: Mercury Tours";
-	String pageTitleFind = "Find a Flight: Mercury Tours";
-	String pageTitleSelect = "Select a Flight: Mercury Tours";
-	String pageTitleBook = "Book a Flight: Mercury Tours";
-	String pageTitleConfirmation = "Flight Confirmation: Mercury Tours";
+	static ExcelUtils excelTitulosPaginas;
+	//private String pageTitle = "";
+	private String pageTitleFind = "";
+	private String pageTitleSelect = "";
+	private String pageTitleBook = "";
+	private String pageTitleConfirmation = "";
 
 	// Credenciales de autenticación
-	//private String userName = "tutorial";
-	//private String password = "tutorial";
+	// private String userName = "tutorial";
+	// private String password = "tutorial";
 
 	// Valores para seleccionar las opciones en la página Find Flight
 	private String tripType = "One way";
@@ -81,6 +86,9 @@ public class cp005ReservarVuelo extends TestBase {
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void diligenciarFindFlight() throws Exception {
 
+		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+				ExcelType.XLSX);
+		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
 		findFlight = new FindFlightPage(driver, pageTitleFind);
 		findFlight.seleccionFindFlight(tripType, passengers, departing,
 				monthIni, dayIni, arrivingIn, monthEnd, dayEnd, serviceClass,
@@ -91,6 +99,9 @@ public class cp005ReservarVuelo extends TestBase {
 	@Test(priority = 2, dependsOnMethods = { "login" })
 	public void diligenciarSelectFlight() throws Exception {
 
+		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+				ExcelType.XLSX);
+		pageTitleSelect = excelTitulosPaginas.getCellData(3, 0);
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
 		selectFlight.seleccionSelectFlight(departingSelect, returningSelect);
 
@@ -99,6 +110,9 @@ public class cp005ReservarVuelo extends TestBase {
 	@Test(priority = 3, dependsOnMethods = { "login" })
 	public void diligenciarBookFlight() throws Exception {
 
+		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+				ExcelType.XLSX);
+		pageTitleBook = excelTitulosPaginas.getCellData(4, 0);
 		bookFlight = new BookFlightPage(driver, pageTitleBook);
 		bookFlight.seleccionBookAFlight(firstName0, lastName0, meal0, cardType,
 				cardNumber, expCMonth, expCYear, cardFirstName, cardMiddleNane,
@@ -111,6 +125,9 @@ public class cp005ReservarVuelo extends TestBase {
 	@Test(priority = 4, dependsOnMethods = { "login" })
 	public void verificarConfirmationFlight() throws Exception {
 
+		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+				ExcelType.XLSX);
+		pageTitleConfirmation = excelTitulosPaginas.getCellData(5, 0);
 		confirmationFlight = new FlightConfirmationPage(driver,
 				pageTitleConfirmation);
 		confirmationFlight.seleccionarBotonFlightConfirmation(eleccion);

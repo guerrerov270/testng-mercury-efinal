@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21619" started-at="2017-11-08T05:15:04Z" finished-at="2017-11-08T05:15:25Z">
+  <suite name="Default suite" duration-ms="20334" started-at="2017-11-08T05:53:34Z" finished-at="2017-11-08T05:53:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21619" started-at="2017-11-08T05:15:04Z" finished-at="2017-11-08T05:15:25Z">
-      <class name="test.reservarvuelo.cp004ValidarCamposConfirmationFlight">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8491" started-at="2017-11-08T00:15:04Z" finished-at="2017-11-08T00:15:12Z">
+    <test name="Default test" duration-ms="20334" started-at="2017-11-08T05:53:34Z" finished-at="2017-11-08T05:53:54Z">
+      <class name="test.reservarvuelo.cp001ValidarCamposFindFlight">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8402" started-at="2017-11-08T00:53:34Z" finished-at="2017-11-08T00:53:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@7cd62f43]" name="login" duration-ms="7732" started-at="2017-11-08T00:15:12Z" finished-at="2017-11-08T00:15:20Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="login" duration-ms="7812" started-at="2017-11-08T00:53:42Z" finished-at="2017-11-08T00:53:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="ValidarCamposConfirmationFlight()[pri:1, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@7cd62f43]" name="ValidarCamposConfirmationFlight" duration-ms="5003" started-at="2017-11-08T00:15:20Z" depends-on-methods="test.reservarvuelo.cp004ValidarCamposConfirmationFlight.login" finished-at="2017-11-08T00:15:25Z">
+        <test-method status="PASS" signature="ValidarCamposFindFlight()[pri:1, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="ValidarCamposFindFlight" duration-ms="3690" started-at="2017-11-08T00:53:50Z" depends-on-methods="test.reservarvuelo.cp001ValidarCamposFindFlight.login" finished-at="2017-11-08T00:53:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidarCamposConfirmationFlight -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@7cd62f43]" name="tearDown" is-config="true" duration-ms="264" started-at="2017-11-08T00:15:25Z" finished-at="2017-11-08T00:15:25Z">
+        </test-method> <!-- ValidarCamposFindFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="tearDown" is-config="true" duration-ms="306" started-at="2017-11-08T00:53:54Z" finished-at="2017-11-08T00:53:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- test.reservarvuelo.cp004ValidarCamposConfirmationFlight -->
+      </class> <!-- test.reservarvuelo.cp001ValidarCamposFindFlight -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -19,6 +19,7 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
+	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposBookFlight;
 	private String nombreInputFirstName = "";
 	private String nombreInputLastName = "";
@@ -45,10 +46,10 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	private String nombreInputDelPostal = "";
 	private String nombreComboDelCountry = "";
 	private String nombreButtonBuyFlights = "";
-	String pageTitle = "Welcome: Mercury Tours";
-	String pageTitleFind = "Find a Flight: Mercury Tours";
-	String pageTitleSelect = "Select a Flight: Mercury Tours";
-	String pageTitleBook = "Book a Flight: Mercury Tours";
+	//private String pageTitle = "Welcome: Mercury Tours";
+	private String pageTitleFind = "";
+	private String pageTitleSelect = "";
+	private String pageTitleBook = "";
 	
 
 	@Test
@@ -60,6 +61,13 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposBookFlight() throws Exception {
+		
+		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+				ExcelType.XLSX);
+		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
+		pageTitleSelect = excelTitulosPaginas.getCellData(3, 0);
+		pageTitleBook = excelTitulosPaginas.getCellData(4, 0);
+		
 		findFlight = new FindFlightPage(driver, pageTitleFind);
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
 		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
