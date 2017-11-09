@@ -9,13 +9,13 @@ import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.MenuNavegacionPage;
 import pageObjects.SelectFlightPage;
-import test.autenticacion.cp002LoginMercuryCorrecto;
 import utils.ExcelUtils;
+import utils.LoginUtil;
 import utils.ExcelUtils.ExcelType;
 
 public class cp006ReservarVueloCruises extends TestBase {
 
-	cp002LoginMercuryCorrecto login;
+	LoginUtil login;
 	CruisePage cruises;
 	MenuNavegacionPage menu;
 	FindFlightPage findFlight;
@@ -85,8 +85,8 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test
 	public void login() {
 
-		login = new cp002LoginMercuryCorrecto();
-		login.loginCorrecto();
+		login = new LoginUtil();
+		login.hacerLogin();
 	}
 
 	@Test(priority = 1, dependsOnMethods = { "login" })

@@ -3,17 +3,18 @@ package test.reservarvuelo;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
+
 import base.TestBase;
 import pageObjects.FindFlightPage;
 import pageObjects.SelectFlightPage;
-import test.autenticacion.cp002LoginMercuryCorrecto;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
+import utils.LoginUtil;
 
 public class cp001ValidarCamposFindFlight extends TestBase {
 
-	cp002LoginMercuryCorrecto login;
+	LoginUtil login;
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	static ExcelUtils excelTitulosPaginas;
@@ -38,8 +39,8 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 	@Test
 	public void login() {
 
-		login = new cp002LoginMercuryCorrecto();
-		login.loginCorrecto();
+		login = new LoginUtil();
+		login.hacerLogin();
 	}// Fin método login
 
 	@Test(priority = 1, dependsOnMethods = { "login" })

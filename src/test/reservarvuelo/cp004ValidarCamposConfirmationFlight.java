@@ -9,14 +9,14 @@ import pageObjects.BookFlightPage;
 import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.SelectFlightPage;
-import test.autenticacion.cp002LoginMercuryCorrecto;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
+import utils.LoginUtil;
 import utils.ExcelUtils.ExcelType;
 
 public class cp004ValidarCamposConfirmationFlight extends TestBase {
 
-	cp002LoginMercuryCorrecto login;
+	LoginUtil login;
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
@@ -35,8 +35,8 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 	@Test
 	public void login() {
 
-		login = new cp002LoginMercuryCorrecto();
-		login.loginCorrecto();
+		login = new LoginUtil();
+		login.hacerLogin();
 	}
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
