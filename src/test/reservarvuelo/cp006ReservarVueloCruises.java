@@ -68,7 +68,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	private String stateBill = "Estado";
 	private String postalCodeBill = "057";
 	private String countryBill = "QATAR";
-	boolean sameAsBillingAddress = true;
+	boolean sameAsBillingAddress = false;
 	private String address1Del = "Direccion 1";
 	private String address2Del = "Direccion 2";
 	private String cityDel = "Ciudad";

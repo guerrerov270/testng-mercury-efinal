@@ -44,13 +44,13 @@ public class FlightConfirmationPage extends PageBase {
 	public void seleccionarBotonFlightConfirmation(String eleccion) {
 
 		switch (eleccion) {
-		case "vuelos":
+		case "flights":
 			clickButtonLink(buttonBackToFlights);
 			break;
 		case "home":
 			clickButtonLink(buttonBackToHome);
 			break;
-		case "salir":
+		case "Log out":
 			clickButtonLink(buttonLogOut);
 			break;
 
