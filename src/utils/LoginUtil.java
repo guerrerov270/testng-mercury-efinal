@@ -19,8 +19,7 @@ public class LoginUtil {
 	protected FindFlightPage findFlight;
 	// Utilidad para el manejo de excel
 	static ExcelUtils excelDatosLogin;
-	private String pageTitleIndex = "Welcome: Mercury Tours";
-	private String pageFindFlight = "Find a Flight: Mercury Tours";
+	static ExcelUtils excelTitulosPaginas;
 	private String userName = "";
 	private String password = "";
 	TestBase test;
@@ -31,10 +30,17 @@ public class LoginUtil {
 			excelDatosLogin = new ExcelUtils("DatosLogin.xlsx", ExcelType.XLSX);
 			userName = excelDatosLogin.getCellData(1, 1);
 			password = excelDatosLogin.getCellData(1, 2);
+
+			// Se crea la instancia para manejar el archivo TitulosPaginas.xlsx
+			excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
+					ExcelType.XLSX);
+
 			test = new TestBase();
-			login = new LoginPage(test.getDriver(), pageTitleIndex);
+			login = new LoginPage(test.getDriver(),
+					excelTitulosPaginas.getCellData(1, 0));
 			login.loginMercuryTours(userName, password);
-			findFlight = new FindFlightPage(test.getDriver(), pageFindFlight);
+			findFlight = new FindFlightPage(test.getDriver(),
+					excelTitulosPaginas.getCellData(2, 0));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
