@@ -1,5 +1,8 @@
 package test.reservarvuelo;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import base.TestBase;
@@ -11,13 +14,11 @@ import pageObjects.MenuNavegacionPage;
 import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ExcelUtils;
-import utils.LoginUtil;
 import utils.ExcelUtils.ExcelType;
 
 public class cp006ReservarVueloCruises extends TestBase {
 
 	PagesFacade facade;
-	LoginUtil login;
 	CruisePage cruises;
 	MenuNavegacionPage menu;
 	FindFlightPage findFlight;
@@ -73,10 +74,10 @@ public class cp006ReservarVueloCruises extends TestBase {
 	private String eleccion = "";
 
 	@Test
-	public void login() {
+	public void login() throws FileNotFoundException, IOException {
 
-		login = new LoginUtil();
-		login.hacerLogin();
+		facade = new PagesFacade();
+		facade.hacerLogin();
 	}
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
@@ -97,7 +98,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 2, dependsOnMethods = { "login" })
 	public void diligenciarFindFlight() throws Exception {
 
-		facade= new PagesFacade();
+		facade = new PagesFacade();
 		findFlight = facade.getFindFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosFindFlight.xlsx",
@@ -120,7 +121,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 3, dependsOnMethods = { "login" })
 	public void diligenciarSelectFlight() throws Exception {
 
-		facade= new PagesFacade();
+		facade = new PagesFacade();
 		selectFlight = facade.getSelectFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosSelectFlight.xlsx",
@@ -133,7 +134,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 4, dependsOnMethods = { "login" })
 	public void diligenciarBookFlight() throws Exception {
 
-		facade= new PagesFacade();
+		facade = new PagesFacade();
 		bookFlight = facade.getBookFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosBookAFlight.xlsx",
@@ -183,7 +184,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 5, dependsOnMethods = { "login" })
 	public void verificarConfirmationFlight() throws Exception {
 
-		facade= new PagesFacade();
+		facade = new PagesFacade();
 		confirmationFlight = facade.getConfirmationFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosConfirmationFlight.xlsx",

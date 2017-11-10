@@ -1,5 +1,6 @@
 package test.reservarvuelo;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
@@ -10,16 +11,14 @@ import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
-import utils.LoginUtil;
 
 public class cp001ValidarCamposFindFlight extends TestBase {
 
 	PagesFacade facade;
-	LoginUtil login;
 	FindFlightPage findFlight;
 	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposFindFlight;
-	//private String pageTitleFind = "";
+	// private String pageTitleFind = "";
 	private String nombreRadioRoundTrip = "";
 	private String nombreRadioOneWay = "";
 	private String nombreSelectPassengers = "";
@@ -36,17 +35,17 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 	private String nombreButtonContinue = "";
 
 	@Test
-	public void login() {
+	public void login() throws FileNotFoundException, IOException {
 
-		login = new LoginUtil();
-		login.hacerLogin();
+		facade = new PagesFacade();
+		facade.hacerLogin();
 	}// Fin método login
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
-	public void ValidarCamposFindFlight() throws Exception{
-		
-		facade= new PagesFacade();
-		findFlight= facade.getFindFlight();
+	public void ValidarCamposFindFlight() throws Exception {
+
+		facade = new PagesFacade();
+		findFlight = facade.getFindFlight();
 
 		try {
 			excelCamposFindFlight = new ExcelUtils("CamposFindFlight.xlsx",
@@ -61,16 +60,19 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 			nombreSelectReturning = excelCamposFindFlight.getCellData(8, 0);
 			nombreSelectDayEnd = excelCamposFindFlight.getCellData(9, 0);
 			nombreRadioEconomyClass = excelCamposFindFlight.getCellData(10, 0);
-			nombreRadioBussinessClass = excelCamposFindFlight.getCellData(11, 0);
+			nombreRadioBussinessClass = excelCamposFindFlight
+					.getCellData(11, 0);
 			nombreRadioFirstClass = excelCamposFindFlight.getCellData(12, 0);
 			nombreSelectAirline = excelCamposFindFlight.getCellData(13, 0);
 			nombreButtonContinue = excelCamposFindFlight.getCellData(14, 0);
 
 		} catch (IOException e) {
 
-			System.out.println("*******************ATENCIÓN*******************************");
+			System.out
+					.println("*******************ATENCIÓN*******************************");
 			System.out.println(e.getMessage());
-			System.out.println("**********************************************************");
+			System.out
+					.println("**********************************************************");
 		}
 
 		// Validación de los campos del área Preferences

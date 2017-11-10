@@ -1,5 +1,6 @@
 package test.reservarvuelo;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
@@ -9,13 +10,11 @@ import pageObjects.FlightConfirmationPage;
 import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
-import utils.LoginUtil;
 import utils.ExcelUtils.ExcelType;
 
 public class cp004ValidarCamposConfirmationFlight extends TestBase {
 
 	PagesFacade facade;
-	LoginUtil login;
 	FlightConfirmationPage confirmationFlight;
 	static ExcelUtils excelCamposConfirmationFlight;
 	private String nombreButtonBackToFlights = "";
@@ -23,10 +22,10 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 	private String nombreButtonLogOut = "";
 
 	@Test
-	public void login() {
+	public void login() throws FileNotFoundException, IOException {
 
-		login = new LoginUtil();
-		login.hacerLogin();
+		facade = new PagesFacade();
+		facade.hacerLogin();
 	}
 
 	@Test(priority = 1, dependsOnMethods = { "login" })

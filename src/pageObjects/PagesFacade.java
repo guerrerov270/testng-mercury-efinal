@@ -6,6 +6,7 @@ import java.io.IOException;
 import base.TestBase;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
+import utils.LoginUtil;
 
 /**
  * Clase Fachada que me permite reducir la complejidad de las relaciones entre
@@ -22,6 +23,7 @@ import utils.ExcelUtils.ExcelType;
  */
 public class PagesFacade {
 
+	// Páginas
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
@@ -31,8 +33,12 @@ public class PagesFacade {
 	MenuNavegacionPage menuPage;
 	RegistrarUsuarioPage registrarPage;
 	SignOnPage signOnPage;
+	// Utilidad de Excel
 	static ExcelUtils excelTitulosPaginas;
+	// Test para acceder al driver
 	TestBase test;
+	// Login para acceder al login
+	LoginUtil login;
 
 	public PagesFacade() throws FileNotFoundException, IOException {
 
@@ -54,21 +60,46 @@ public class PagesFacade {
 
 	}
 
+	/**
+	 * Va a la página Select flight haciendo click en el botón de la página
+	 * anterior: Find Flight
+	 */
 	public void irASelectFlight() {
 
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
 
 	}
 
+	/**
+	 * Va a la página Book flight haciendo click en el botón de la página
+	 * anterior: Select Flight
+	 */
 	public void irABookFlight() {
 
 		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
 
 	}
 
+	/**
+	 * Va a la página Confirmation flight haciendo click en el botón de la
+	 * página anterior: Book Flight
+	 */
 	public void irAConfirmationFlight() {
 
 		bookFlight.clickButtonLink(bookFlight.getButtonBuyFlights());
+
+	}
+
+	/**
+	 * Realiza el proceso de login en MercuryTours a través de una instancia de
+	 * Login Util, esto con el fin de quitar la instancia de login que hay en
+	 * cada caso de prueba y realizra la autenticación usando la instancia de
+	 * PagesFacade ya existente.
+	 */
+	public void hacerLogin() {
+
+		login = new LoginUtil();
+		login.hacerLogin();
 
 	}
 

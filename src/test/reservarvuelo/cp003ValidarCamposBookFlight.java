@@ -1,5 +1,6 @@
 package test.reservarvuelo;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
@@ -9,13 +10,11 @@ import pageObjects.BookFlightPage;
 import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
-import utils.LoginUtil;
 import utils.ExcelUtils.ExcelType;
 
 public class cp003ValidarCamposBookFlight extends TestBase {
 
 	PagesFacade facade;
-	LoginUtil login;
 	BookFlightPage bookFlight;
 	static ExcelUtils excelCamposBookFlight;
 	private String nombreInputFirstName = "";
@@ -43,23 +42,22 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	private String nombreInputDelPostal = "";
 	private String nombreComboDelCountry = "";
 	private String nombreButtonBuyFlights = "";
-	
 
 	@Test
-	public void login() {
+	public void login() throws FileNotFoundException, IOException {
 
-		login = new LoginUtil();
-		login.hacerLogin();
+		facade = new PagesFacade();
+		facade.hacerLogin();
 	}
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposBookFlight() throws Exception {
-		
-		facade= new PagesFacade();
+
+		facade = new PagesFacade();
 		facade.irASelectFlight();
 		facade.irABookFlight();
 		bookFlight = facade.getBookFlight();
-		
+
 		try {
 			excelCamposBookFlight = new ExcelUtils("CamposBookAFlight.xlsx",
 					ExcelType.XLSX);
@@ -68,7 +66,8 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 			nombreComboMeal = excelCamposBookFlight.getCellData(3, 0);
 			nombreComboCardType = excelCamposBookFlight.getCellData(4, 0);
 			nombreInputNumber = excelCamposBookFlight.getCellData(5, 0);
-			nombreComboExpirationMonth = excelCamposBookFlight.getCellData(6, 0);
+			nombreComboExpirationMonth = excelCamposBookFlight
+					.getCellData(6, 0);
 			nombreComboExpirationYear = excelCamposBookFlight.getCellData(7, 0);
 			nombreInputFirstNameCard = excelCamposBookFlight.getCellData(8, 0);
 			nombreInputMiddleNameCard = excelCamposBookFlight.getCellData(9, 0);
@@ -80,7 +79,8 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 			nombreInputBillState = excelCamposBookFlight.getCellData(15, 0);
 			nombreInputBillPostal = excelCamposBookFlight.getCellData(16, 0);
 			nombreComboBillCountry = excelCamposBookFlight.getCellData(17, 0);
-			nombreCheckBillingAddress = excelCamposBookFlight.getCellData(18, 0);
+			nombreCheckBillingAddress = excelCamposBookFlight
+					.getCellData(18, 0);
 			nombreInputDelAddress1 = excelCamposBookFlight.getCellData(19, 0);
 			nombreInputDelAddress2 = excelCamposBookFlight.getCellData(20, 0);
 			nombreInputDelCity = excelCamposBookFlight.getCellData(21, 0);
@@ -124,19 +124,23 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboExpirationMonth()))) {
-				throw new ElementoNoEncontradoException(nombreComboExpirationMonth);
+				throw new ElementoNoEncontradoException(
+						nombreComboExpirationMonth);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getComboExpirationYear()))) {
-				throw new ElementoNoEncontradoException(nombreComboExpirationYear);
+				throw new ElementoNoEncontradoException(
+						nombreComboExpirationYear);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputFirstNameCard()))) {
-				throw new ElementoNoEncontradoException(nombreInputFirstNameCard);
+				throw new ElementoNoEncontradoException(
+						nombreInputFirstNameCard);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputMiddleNameCard()))) {
-				throw new ElementoNoEncontradoException(nombreInputMiddleNameCard);
+				throw new ElementoNoEncontradoException(
+						nombreInputMiddleNameCard);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputLastNameCard()))) {
@@ -174,7 +178,8 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 			// Validar los campos del área área Delivery address
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getCheckBillingAddress()))) {
-				throw new ElementoNoEncontradoException(nombreCheckBillingAddress);
+				throw new ElementoNoEncontradoException(
+						nombreCheckBillingAddress);
 			}
 			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
 					.getInputDelAddress1()))) {
@@ -207,7 +212,7 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 			}
 		} catch (ElementoNoEncontradoException e3) {
 			System.out.println(e3.getDescripcion() + e3.getMessage());
-		}		
+		}
 
 	}// Fin método ValidarCamposBookFlight
 
