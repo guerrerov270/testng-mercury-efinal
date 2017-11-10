@@ -8,6 +8,7 @@ import pageObjects.CruisePage;
 import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.MenuNavegacionPage;
+import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ExcelUtils;
 import utils.LoginUtil;
@@ -15,6 +16,7 @@ import utils.ExcelUtils.ExcelType;
 
 public class cp006ReservarVueloCruises extends TestBase {
 
+	PagesFacade facade;
 	LoginUtil login;
 	CruisePage cruises;
 	MenuNavegacionPage menu;
@@ -22,19 +24,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
 	FlightConfirmationPage confirmationFlight;
-	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelDatosPaginas;
-	private String pageTitle = "";
-	private String pageTitleFind = "";
-	private String pageTitleSelect = "";
-	private String pageTitleBook = "";
-	private String pageTitleCruises = "";
-	private String pageTitleConfirmation = "";
-
-	// Credenciales de autenticación
-	// private String userName = "tutorial";
-	// private String password = "tutorial";
-
 	// Valores para seleccionar las opciones en la página Find Flight
 	private String tripType = "";
 	private String passengers = "";
@@ -92,17 +82,14 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ingresarPorCruises() throws Exception {
 
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitle = excelTitulosPaginas.getCellData(1, 0);
-		pageTitleCruises = excelTitulosPaginas.getCellData(6, 0);
+		facade = new PagesFacade();
 
 		// Clic en el link de Cruise
-		menu = new MenuNavegacionPage(driver, pageTitle);
+		menu = facade.getMenuPage();
 		menu.clickButtonLink(menu.getLnkCruises());
 
 		// Clic en Now Accepting
-		cruises = new CruisePage(driver, pageTitleCruises);
+		cruises = facade.getCruisePage();
 		cruises.clickButtonLink(cruises.getLnkNowAccepting());
 
 	}
@@ -110,11 +97,8 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 2, dependsOnMethods = { "login" })
 	public void diligenciarFindFlight() throws Exception {
 
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
-
-		findFlight = new FindFlightPage(driver, pageTitleFind);
+		facade= new PagesFacade();
+		findFlight = facade.getFindFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosFindFlight.xlsx",
 				ExcelType.XLSX);
@@ -136,11 +120,8 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 3, dependsOnMethods = { "login" })
 	public void diligenciarSelectFlight() throws Exception {
 
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleSelect = excelTitulosPaginas.getCellData(3, 0);
-
-		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
+		facade= new PagesFacade();
+		selectFlight = facade.getSelectFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosSelectFlight.xlsx",
 				ExcelType.XLSX);
@@ -152,11 +133,8 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 4, dependsOnMethods = { "login" })
 	public void diligenciarBookFlight() throws Exception {
 
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleBook = excelTitulosPaginas.getCellData(4, 0);
-
-		bookFlight = new BookFlightPage(driver, pageTitleBook);
+		facade= new PagesFacade();
+		bookFlight = facade.getBookFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosBookAFlight.xlsx",
 				ExcelType.XLSX);
@@ -205,12 +183,8 @@ public class cp006ReservarVueloCruises extends TestBase {
 	@Test(priority = 5, dependsOnMethods = { "login" })
 	public void verificarConfirmationFlight() throws Exception {
 
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleConfirmation = excelTitulosPaginas.getCellData(5, 0);
-
-		confirmationFlight = new FlightConfirmationPage(driver,
-				pageTitleConfirmation);
+		facade= new PagesFacade();
+		confirmationFlight = facade.getConfirmationFlight();
 		// Diligencio la página con valores desde el data pool
 		excelDatosPaginas = new ExcelUtils("DatosConfirmationFlight.xlsx",
 				ExcelType.XLSX);

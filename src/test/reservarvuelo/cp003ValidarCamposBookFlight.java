@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import base.TestBase;
 import pageObjects.BookFlightPage;
 import pageObjects.FindFlightPage;
+import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
@@ -15,11 +16,11 @@ import utils.ExcelUtils.ExcelType;
 
 public class cp003ValidarCamposBookFlight extends TestBase {
 
+	PagesFacade facade;
 	LoginUtil login;
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
-	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposBookFlight;
 	private String nombreInputFirstName = "";
 	private String nombreInputLastName = "";
@@ -46,10 +47,6 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	private String nombreInputDelPostal = "";
 	private String nombreComboDelCountry = "";
 	private String nombreButtonBuyFlights = "";
-	//private String pageTitle = "Welcome: Mercury Tours";
-	private String pageTitleFind = "";
-	private String pageTitleSelect = "";
-	private String pageTitleBook = "";
 	
 
 	@Test
@@ -62,17 +59,12 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposBookFlight() throws Exception {
 		
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
-		pageTitleSelect = excelTitulosPaginas.getCellData(3, 0);
-		pageTitleBook = excelTitulosPaginas.getCellData(4, 0);
-		
-		findFlight = new FindFlightPage(driver, pageTitleFind);
+		facade= new PagesFacade();
+		findFlight = facade.getFindFlight();
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
-		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
+		selectFlight = facade.getSelectFlight();
 		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
-		bookFlight = new BookFlightPage(driver, pageTitleBook);
+		bookFlight = facade.getBookFlight();
 		
 		try {
 			excelCamposBookFlight = new ExcelUtils("CamposBookAFlight.xlsx",

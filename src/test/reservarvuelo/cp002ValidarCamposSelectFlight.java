@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import base.TestBase;
 import pageObjects.FindFlightPage;
+import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
@@ -14,10 +15,10 @@ import utils.ExcelUtils.ExcelType;
 
 public class cp002ValidarCamposSelectFlight extends TestBase {
 
+	PagesFacade facade;
 	LoginUtil login;
 	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
-	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposSelectFlight;
 	private String nombreFlight360 = "";
 	private String nombreFlight361 = "";
@@ -28,9 +29,6 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 	private String nombreFlight632 = "";
 	private String nombreFlight633 = "";
 	private String nombreButtonContinue = "";
-	//private String pageTitle = "Welcome: Mercury Tours";
-	private String pageTitleFind = "";
-	private String pageTitleSelect = "";
 
 	@Test
 	public void login() {
@@ -42,14 +40,10 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposSelectFlight() throws Exception {
 		
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
-		pageTitleSelect = excelTitulosPaginas.getCellData(3, 0);
-		
-		findFlight = new FindFlightPage(driver, pageTitleFind);
+		facade= new PagesFacade();
+		findFlight = facade.getFindFlight();
 		findFlight.clickButtonLink(findFlight.getButtonContinue());
-		selectFlight = new SelectFlightPage(driver, pageTitleSelect);
+		selectFlight = facade.getSelectFlight();
 
 		try {
 			excelCamposSelectFlight = new ExcelUtils("CamposSelectFlight.xlsx",

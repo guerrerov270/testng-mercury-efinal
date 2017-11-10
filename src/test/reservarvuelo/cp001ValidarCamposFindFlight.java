@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import base.TestBase;
 import pageObjects.FindFlightPage;
-import pageObjects.SelectFlightPage;
+import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
@@ -14,13 +14,12 @@ import utils.LoginUtil;
 
 public class cp001ValidarCamposFindFlight extends TestBase {
 
+	PagesFacade facade;
 	LoginUtil login;
 	FindFlightPage findFlight;
-	SelectFlightPage selectFlight;
 	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposFindFlight;
-	//private String pageTitle = "Welcome: Mercury Tours";
-	private String pageTitleFind = "";
+	//private String pageTitleFind = "";
 	private String nombreRadioRoundTrip = "";
 	private String nombreRadioOneWay = "";
 	private String nombreSelectPassengers = "";
@@ -46,11 +45,8 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposFindFlight() throws Exception{
 		
-		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
-				ExcelType.XLSX);
-		pageTitleFind = excelTitulosPaginas.getCellData(2, 0);
-		
-		findFlight = new FindFlightPage(driver, pageTitleFind);
+		facade= new PagesFacade();
+		findFlight= facade.getFindFlight();
 
 		try {
 			excelCamposFindFlight = new ExcelUtils("CamposFindFlight.xlsx",
