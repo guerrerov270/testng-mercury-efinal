@@ -5,11 +5,8 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import pageObjects.BookFlightPage;
-import pageObjects.FindFlightPage;
 import pageObjects.FlightConfirmationPage;
 import pageObjects.PagesFacade;
-import pageObjects.SelectFlightPage;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.LoginUtil;
@@ -19,9 +16,6 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 
 	PagesFacade facade;
 	LoginUtil login;
-	FindFlightPage findFlight;
-	SelectFlightPage selectFlight;
-	BookFlightPage bookFlight;
 	FlightConfirmationPage confirmationFlight;
 	static ExcelUtils excelCamposConfirmationFlight;
 	private String nombreButtonBackToFlights = "";
@@ -37,23 +31,22 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposConfirmationFlight() throws Exception {
-		
-		facade= new PagesFacade();
-		findFlight = facade.getFindFlight();
-		findFlight.clickButtonLink(findFlight.getButtonContinue());
-		selectFlight = facade.getSelectFlight();
-		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
-		bookFlight = facade.getBookFlight();
-		// Clic en botón Secure purchase
-		bookFlight.clickButtonLink(bookFlight.getButtonBuyFlights());
+
+		facade = new PagesFacade();
+		facade.irASelectFlight();
+		facade.irABookFlight();
+		facade.irAConfirmationFlight();
 		confirmationFlight = facade.getConfirmationFlight();
 
 		try {
 			excelCamposConfirmationFlight = new ExcelUtils(
 					"CamposConfirmationFlight.xlsx", ExcelType.XLSX);
-			nombreButtonBackToFlights = excelCamposConfirmationFlight.getCellData(1, 0);
-			nombreButtonBackToHome = excelCamposConfirmationFlight.getCellData(2, 0);
-			nombreButtonLogOut = excelCamposConfirmationFlight.getCellData(3, 0);
+			nombreButtonBackToFlights = excelCamposConfirmationFlight
+					.getCellData(1, 0);
+			nombreButtonBackToHome = excelCamposConfirmationFlight.getCellData(
+					2, 0);
+			nombreButtonLogOut = excelCamposConfirmationFlight
+					.getCellData(3, 0);
 
 		} catch (IOException e4) {
 

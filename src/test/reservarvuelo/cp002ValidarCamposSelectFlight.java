@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import pageObjects.FindFlightPage;
 import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ElementoNoEncontradoException;
@@ -17,7 +16,6 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 
 	PagesFacade facade;
 	LoginUtil login;
-	FindFlightPage findFlight;
 	SelectFlightPage selectFlight;
 	static ExcelUtils excelCamposSelectFlight;
 	private String nombreFlight360 = "";
@@ -39,10 +37,9 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 
 	@Test(priority = 1, dependsOnMethods = { "login" })
 	public void ValidarCamposSelectFlight() throws Exception {
-		
-		facade= new PagesFacade();
-		findFlight = facade.getFindFlight();
-		findFlight.clickButtonLink(findFlight.getButtonContinue());
+
+		facade = new PagesFacade();
+		facade.irASelectFlight();
 		selectFlight = facade.getSelectFlight();
 
 		try {

@@ -39,13 +39,37 @@ public class PagesFacade {
 		test = new TestBase();
 		excelTitulosPaginas = new ExcelUtils("TitulosPaginas.xlsx",
 				ExcelType.XLSX);
-		findFlight = new FindFlightPage(test.getDriver(), excelTitulosPaginas.getCellData(2, 0));
-		selectFlight= new SelectFlightPage(test.getDriver(), excelTitulosPaginas.getCellData(3, 0));
-		bookFlight= new BookFlightPage(test.getDriver(), excelTitulosPaginas.getCellData(4, 0));
-		confirmationFlight= new FlightConfirmationPage(test.getDriver(), excelTitulosPaginas.getCellData(5, 0));
-		cruisePage= new CruisePage(test.getDriver(), excelTitulosPaginas.getCellData(6, 0));
-		menuPage= new MenuNavegacionPage(test.getDriver(), excelTitulosPaginas.getCellData(1, 0));
-		
+		findFlight = new FindFlightPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(2, 0));
+		selectFlight = new SelectFlightPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(3, 0));
+		bookFlight = new BookFlightPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(4, 0));
+		confirmationFlight = new FlightConfirmationPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(5, 0));
+		cruisePage = new CruisePage(test.getDriver(),
+				excelTitulosPaginas.getCellData(6, 0));
+		menuPage = new MenuNavegacionPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(1, 0));
+
+	}
+
+	public void irASelectFlight() {
+
+		findFlight.clickButtonLink(findFlight.getButtonContinue());
+
+	}
+
+	public void irABookFlight() {
+
+		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
+
+	}
+
+	public void irAConfirmationFlight() {
+
+		bookFlight.clickButtonLink(bookFlight.getButtonBuyFlights());
+
 	}
 
 	public FindFlightPage getFindFlight() {

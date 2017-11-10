@@ -6,9 +6,7 @@ import org.testng.annotations.Test;
 
 import base.TestBase;
 import pageObjects.BookFlightPage;
-import pageObjects.FindFlightPage;
 import pageObjects.PagesFacade;
-import pageObjects.SelectFlightPage;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.LoginUtil;
@@ -18,8 +16,6 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 
 	PagesFacade facade;
 	LoginUtil login;
-	FindFlightPage findFlight;
-	SelectFlightPage selectFlight;
 	BookFlightPage bookFlight;
 	static ExcelUtils excelCamposBookFlight;
 	private String nombreInputFirstName = "";
@@ -60,10 +56,8 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	public void ValidarCamposBookFlight() throws Exception {
 		
 		facade= new PagesFacade();
-		findFlight = facade.getFindFlight();
-		findFlight.clickButtonLink(findFlight.getButtonContinue());
-		selectFlight = facade.getSelectFlight();
-		selectFlight.clickButtonLink(selectFlight.getButtonContinue());
+		facade.irASelectFlight();
+		facade.irABookFlight();
 		bookFlight = facade.getBookFlight();
 		
 		try {
