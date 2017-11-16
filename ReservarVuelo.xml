@@ -31,5 +31,10 @@
 			<class name="test.reservarvuelo.cp006ReservarVueloCruises" />
 		</classes>
 	</test>
+	<test name="007ReservarVueloMultiplesPasajeros">
+		<classes>
+			<class name="test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros" />
+		</classes>
+	</test>
 	
 </suite>

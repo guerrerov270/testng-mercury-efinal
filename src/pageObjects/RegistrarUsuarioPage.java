@@ -8,7 +8,9 @@ import org.openqa.selenium.support.How;
 import base.PageBase;
 
 /**
- * Clase que contiene los WebElements de http://newtours.demoaut.com/mercuryregister.php
+ * Clase que contiene los WebElements de
+ * http://newtours.demoaut.com/mercuryregister.php
+ * 
  * @author anamariaquinteroleal
  *
  */
@@ -21,6 +23,7 @@ public class RegistrarUsuarioPage extends PageBase {
 	public RegistrarUsuarioPage(WebDriver driver, String pageTitle) {
 		super(driver, pageTitle);
 	}
+
 	// WebElements
 
 	/**
@@ -33,35 +36,67 @@ public class RegistrarUsuarioPage extends PageBase {
 	@FindBy(how = How.NAME, using = "phone")
 	private WebElement inputPhone;
 	@FindBy(how = How.ID, using = "userName")
-	private WebElement inputImail;
+	private WebElement inputEmail;
 
 	/**
 	 * Área Mailing Information
 	 */
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "address1")
 	private WebElement inputAddress1;
-	@FindBy(how = How.NAME, using = "")
-	private WebElement inputAddress2;
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "address2")
+	private WebElement inputAddres2;
+	@FindBy(how = How.NAME, using = "city")
 	private WebElement inputCity;
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "state")
 	private WebElement inputState;
-	@FindBy(how = How.NAME, using = "")
-	private WebElement inputPostal;
-	@FindBy(how = How.NAME, using = "")
-	private WebElement comboCountry;
+	@FindBy(how = How.NAME, using = "postalCode")
+	private WebElement inputPostalCode;
+	@FindBy(how = How.NAME, using = "country")
+	private WebElement selectCountry;
 
 	/**
 	 * Área de User Information
 	 */
-	@FindBy(how = How.ID_OR_NAME, using = "")
-	private WebElement inputUserName;
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "email")
+	private WebElement inputEmailUser;
+	@FindBy(how = How.NAME, using = "password")
 	private WebElement inputPassword;
-	@FindBy(how = How.NAME, using = "")
+	@FindBy(how = How.NAME, using = "confirmPassword")
 	private WebElement inputConfirmPassword;
-	@FindBy(how = How.NAME, using = "")
-	private WebElement botonSubmit;
+
+	// Submit button
+	@FindBy(how = How.NAME, using = "register")
+	private WebElement buttonRegister;
+
+	public void registrarInformacionContacto(String firstName, String lastName,
+			String phone, String email) {
+
+		sendText(inputFirstName, firstName);
+		sendText(inputLastName, lastName);
+		sendText(inputPhone, phone);
+		sendText(inputEmail, email);
+	}
+
+	public void registrarInformacionCorreo(String address1, String address2,
+			String city, String state, String postalCode, String country) {
+
+		sendText(inputAddress1, address1);
+		sendText(inputAddres2, address2);
+		sendText(inputCity, city);
+		sendText(inputState, state);
+		sendText(inputPostalCode, postalCode);
+		// Select country
+		selectDropdownVisibleText(selectCountry, country);
+	}
+
+	public void registrarInformacionUsuario(String userName, String password,
+			String confirmPassword) {
+
+		sendText(inputEmailUser, userName);
+		sendText(inputPassword, password);
+		sendText(inputConfirmPassword, confirmPassword);
+		clickButtonLink(buttonRegister);
+	}
 
 	// Getters
 
@@ -78,15 +113,15 @@ public class RegistrarUsuarioPage extends PageBase {
 	}
 
 	public WebElement getInputImail() {
-		return inputImail;
+		return inputEmail;
 	}
 
 	public WebElement getInputAddress1() {
 		return inputAddress1;
 	}
 
-	public WebElement getInputAddress2() {
-		return inputAddress2;
+	public WebElement getInputAddres2() {
+		return inputAddres2;
 	}
 
 	public WebElement getInputCity() {
@@ -97,16 +132,16 @@ public class RegistrarUsuarioPage extends PageBase {
 		return inputState;
 	}
 
-	public WebElement getInputPostal() {
-		return inputPostal;
+	public WebElement getInputPostalCode() {
+		return inputPostalCode;
 	}
 
-	public WebElement getComboCountry() {
-		return comboCountry;
+	public WebElement getSelectCountry() {
+		return selectCountry;
 	}
 
-	public WebElement getInputUserName() {
-		return inputUserName;
+	public WebElement getInputEmailUser() {
+		return inputEmailUser;
 	}
 
 	public WebElement getInputPassword() {
@@ -117,28 +152,8 @@ public class RegistrarUsuarioPage extends PageBase {
 		return inputConfirmPassword;
 	}
 
-	public WebElement getBotonSubmit() {
-		return botonSubmit;
-	}
-	//Completar
-	public void registrarInformacionContacto(String firstName, String lastName, String phone, String email){
-		
-	}
-	//Completar
-	public void registrarInformacionCorreo(){
-		
-	}
-	/**
-	 * Ingreso datos área del formulario User Information
-	 * @param userName
-	 * @param password
-	 * @param confirmPassword
-	 */
-	public void registrarInformacionUsuario(String userName, String password, String confirmPassword){
-		sendText(getInputUserName(), userName);
-		sendText(getInputPassword(), password);
-		sendText(getInputConfirmPassword(), confirmPassword);
-		clickButtonLink(getBotonSubmit());
+	public WebElement getButtonRegister() {
+		return buttonRegister;
 	}
 
 }

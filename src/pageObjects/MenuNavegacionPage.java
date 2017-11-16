@@ -106,4 +106,24 @@ public class MenuNavegacionPage extends PageBase {
 		return lnkVacations;
 	}
 
+	/**
+	 * Verifica que el texto del enlace del webElement coincida con el recibido
+	 * por parámetro
+	 * 
+	 * @param elemento
+	 *            : el elemento que representa la etiqueta HTML
+	 * @param textoEnlace
+	 *            : El texto del enlace
+	 * @return resultado: true or false
+	 */
+	public boolean getTextLink(WebElement elemento, String textoEnlace) {
+		boolean resultado;
+		if (elemento.getText().equals(textoEnlace)) {
+			resultado = true;
+		} else {
+			resultado = false;
+		}
+		return resultado;
+	}// Fin método getTextLink
+
 }

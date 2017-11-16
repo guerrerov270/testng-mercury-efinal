@@ -57,6 +57,8 @@ public class PagesFacade {
 				excelTitulosPaginas.getCellData(6, 0));
 		menuPage = new MenuNavegacionPage(test.getDriver(),
 				excelTitulosPaginas.getCellData(1, 0));
+		registrarPage = new RegistrarUsuarioPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(7, 0));
 
 	}
 
@@ -88,6 +90,15 @@ public class PagesFacade {
 
 		bookFlight.clickButtonLink(bookFlight.getButtonBuyFlights());
 
+	}
+
+	/**
+	 * Va a la página de Registro haciendo click en el enlace REGISTER que se
+	 * encuentra en el menú de navegación
+	 */
+	public void irARegistro() {
+
+		menuPage.clickButtonLink(menuPage.getLnkRegister());
 	}
 
 	/**

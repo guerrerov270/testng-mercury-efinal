@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="69776" started-at="2017-11-16T18:42:32Z" finished-at="2017-11-16T18:43:42Z">
+  <suite name="Registrar" duration-ms="36448" started-at="2017-11-16T20:48:54Z" finished-at="2017-11-16T20:49:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="69776" started-at="2017-11-16T18:42:32Z" finished-at="2017-11-16T18:43:42Z">
-      <class name="test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8575" started-at="2017-11-16T13:42:32Z" finished-at="2017-11-16T13:42:41Z">
+    <test name="001Validar" duration-ms="16813" started-at="2017-11-16T20:48:54Z" finished-at="2017-11-16T20:49:11Z">
+      <class name="test.registrousuario.cp001ValidarCamposRegister">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8098" started-at="2017-11-16T15:48:54Z" finished-at="2017-11-16T15:49:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@7cd62f43]" name="login" duration-ms="12514" started-at="2017-11-16T13:42:41Z" finished-at="2017-11-16T13:42:53Z">
+        <test-method status="PASS" signature="ingresarRegistrar()[pri:0, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="ingresarRegistrar" duration-ms="4503" started-at="2017-11-16T15:49:02Z" finished-at="2017-11-16T15:49:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="diligenciarFindFlight()[pri:1, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@7cd62f43]" name="diligenciarFindFlight" duration-ms="48392" started-at="2017-11-16T13:42:53Z" depends-on-methods="test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros.login" finished-at="2017-11-16T13:43:42Z">
+        </test-method> <!-- ingresarRegistrar -->
+        <test-method status="PASS" signature="validarCamposContact()[pri:1, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="validarCamposContact" duration-ms="1329" started-at="2017-11-16T15:49:06Z" finished-at="2017-11-16T15:49:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- diligenciarFindFlight -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@7cd62f43]" name="tearDown" is-config="true" duration-ms="158" started-at="2017-11-16T13:43:42Z" finished-at="2017-11-16T13:43:42Z">
+        </test-method> <!-- validarCamposContact -->
+        <test-method status="PASS" signature="validarCamposMailing()[pri:2, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="validarCamposMailing" duration-ms="1530" started-at="2017-11-16T15:49:08Z" finished-at="2017-11-16T15:49:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validarCamposMailing -->
+        <test-method status="PASS" signature="validarCamposUser()[pri:3, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="validarCamposUser" duration-ms="850" started-at="2017-11-16T15:49:09Z" finished-at="2017-11-16T15:49:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validarCamposUser -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="tearDown" is-config="true" duration-ms="314" started-at="2017-11-16T15:49:10Z" finished-at="2017-11-16T15:49:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- test.registrousuario.cp001ValidarCamposRegister -->
+    </test> <!-- 001Validar -->
+    <test name="002Registrar" duration-ms="19498" started-at="2017-11-16T20:49:11Z" finished-at="2017-11-16T20:49:30Z">
+      <class name="test.registrousuario.cp002RegistrarUsuarios">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="initializeTestBaseSetup" is-config="true" duration-ms="4409" started-at="2017-11-16T15:49:11Z" finished-at="2017-11-16T15:49:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="ingresarRegistrar()[pri:0, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="ingresarRegistrar" duration-ms="1741" started-at="2017-11-16T15:49:15Z" finished-at="2017-11-16T15:49:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarRegistrar -->
+        <test-method status="PASS" signature="realizarRegistro()[pri:1, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="realizarRegistro" duration-ms="13017" started-at="2017-11-16T15:49:17Z" finished-at="2017-11-16T15:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- realizarRegistro -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="tearDown" is-config="true" duration-ms="279" started-at="2017-11-16T15:49:30Z" finished-at="2017-11-16T15:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.registrousuario.cp002RegistrarUsuarios -->
+    </test> <!-- 002Registrar -->
+  </suite> <!-- Registrar -->
 </testng-results>
