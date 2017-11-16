@@ -189,7 +189,8 @@ public class BookFlightPage extends PageBase {
 			String postalCodeBill, String countryBill,
 			boolean sameAsBillingAddress, String address1Del,
 			String address2Del, String cityDel, String stateDel,
-			String postalCodeDel, String countryDel) {
+			String postalCodeDel, String countryDelNoAlert,
+			String countryDelAlert) {
 
 		sendText(inputFirstName, firstName);
 		sendText(inputLastName, lastName);
@@ -233,7 +234,17 @@ public class BookFlightPage extends PageBase {
 		sendText(inputDelState, stateDel);
 		inputDelPostal.clear();
 		sendText(inputDelPostal, postalCodeDel);
-		selectDropdownVisibleText(comboDelCountry, countryDel);
+
+		// Si el valor que viene por parámetro es UNITED STATES No saldrá
+		// ninguna alerta, si es otro distinto va a salir una alerta que hay que
+		// aceptar para poder continuar con la reserva del vuelo
+
+		if (countryDelNoAlert != countryDelAlert) {
+			selectDropdownVisibleText(comboDelCountry, countryDelAlert);
+			driver.switchTo().alert().accept();
+		} else {
+			selectDropdownVisibleText(comboDelCountry, countryDelNoAlert);
+		}
 
 		clickButtonLink(buttonBuyFlights);
 

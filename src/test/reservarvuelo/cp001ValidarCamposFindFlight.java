@@ -11,6 +11,7 @@ import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
+import utils.PaginaNoEncontradaException;
 
 public class cp001ValidarCamposFindFlight extends TestBase {
 
@@ -18,7 +19,6 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 	FindFlightPage findFlight;
 	static ExcelUtils excelTitulosPaginas;
 	static ExcelUtils excelCamposFindFlight;
-	// private String pageTitleFind = "";
 	private String nombreRadioRoundTrip = "";
 	private String nombreRadioOneWay = "";
 	private String nombreSelectPassengers = "";
@@ -75,70 +75,87 @@ public class cp001ValidarCamposFindFlight extends TestBase {
 					.println("**********************************************************");
 		}
 
-		// Validación de los campos del área Preferences
-		try {
+		// Verifico que me encuentre en la página
+		if (driver.getTitle().contentEquals(findFlight.getTitle())) {
+			// Validación de los campos del área Preferences
 
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getRadioRoundTrip()))) {
-				throw new ElementoNoEncontradoException(nombreRadioRoundTrip);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getRadioOneWay()))) {
-				throw new ElementoNoEncontradoException(nombreRadioOneWay);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectPassengers()))) {
-				throw new ElementoNoEncontradoException(nombreSelectPassengers);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectDepartingFrom()))) {
-				throw new ElementoNoEncontradoException(
-						nombreSelectDepartingFrom);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectMonthIni()))) {
-				throw new ElementoNoEncontradoException(nombreSelectMonthIni);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectDayIni()))) {
-				throw new ElementoNoEncontradoException(nombreSelectDayIni);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectArrivingIn()))) {
-				throw new ElementoNoEncontradoException(nombreSelectArrivingIn);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectReturning()))) {
-				throw new ElementoNoEncontradoException(nombreSelectReturning);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectDayEnd()))) {
-				throw new ElementoNoEncontradoException(nombreSelectDayEnd);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getRadioEconomyClass()))) {
-				throw new ElementoNoEncontradoException(nombreRadioEconomyClass);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getRadioBussinessClass()))) {
-				throw new ElementoNoEncontradoException(
-						nombreRadioBussinessClass);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getRadioFirstClass()))) {
-				throw new ElementoNoEncontradoException(nombreRadioFirstClass);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getSelectAirline()))) {
-				throw new ElementoNoEncontradoException(nombreSelectAirline);
-			}
-			if (!(findFlight.isElementPresentAndDisplay(findFlight
-					.getButtonContinue()))) {
-				throw new ElementoNoEncontradoException(nombreButtonContinue);
-			}
+			try {
 
-		} catch (ElementoNoEncontradoException e) {
-			System.out.println(e.getDescripcion() + e.getMessage());
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getRadioRoundTrip()))) {
+					throw new ElementoNoEncontradoException(
+							nombreRadioRoundTrip);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getRadioOneWay()))) {
+					throw new ElementoNoEncontradoException(nombreRadioOneWay);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectPassengers()))) {
+					throw new ElementoNoEncontradoException(
+							nombreSelectPassengers);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectDepartingFrom()))) {
+					throw new ElementoNoEncontradoException(
+							nombreSelectDepartingFrom);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectMonthIni()))) {
+					throw new ElementoNoEncontradoException(
+							nombreSelectMonthIni);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectDayIni()))) {
+					throw new ElementoNoEncontradoException(nombreSelectDayIni);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectArrivingIn()))) {
+					throw new ElementoNoEncontradoException(
+							nombreSelectArrivingIn);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectReturning()))) {
+					throw new ElementoNoEncontradoException(
+							nombreSelectReturning);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectDayEnd()))) {
+					throw new ElementoNoEncontradoException(nombreSelectDayEnd);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getRadioEconomyClass()))) {
+					throw new ElementoNoEncontradoException(
+							nombreRadioEconomyClass);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getRadioBussinessClass()))) {
+					throw new ElementoNoEncontradoException(
+							nombreRadioBussinessClass);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getRadioFirstClass()))) {
+					throw new ElementoNoEncontradoException(
+							nombreRadioFirstClass);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getSelectAirline()))) {
+					throw new ElementoNoEncontradoException(nombreSelectAirline);
+				}
+				if (!(findFlight.isElementPresentAndDisplay(findFlight
+						.getButtonContinue()))) {
+					throw new ElementoNoEncontradoException(
+							nombreButtonContinue);
+				}
+
+			} catch (ElementoNoEncontradoException e) {
+				System.out.println(e.getDescripcion() + e.getMessage());
+			}
+		} else {
+
+			throw new PaginaNoEncontradaException(findFlight.getTitle());
+			//No controlamos la excepción porque el caso de prueba debe fallar
+
 		}
 
 	}// Fin método ValidarCamposFindFlight

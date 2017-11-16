@@ -10,6 +10,7 @@ import pageObjects.FlightConfirmationPage;
 import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
+import utils.PaginaNoEncontradaException;
 import utils.ExcelUtils.ExcelType;
 
 public class cp004ValidarCamposConfirmationFlight extends TestBase {
@@ -57,27 +58,36 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 		}
 
 		// Validar que esté en la página Book a flight
-		try {
+		if (driver.getTitle().contentEquals(confirmationFlight.getTitle())) {
 
-			// Validar estén presentes los tres botones
-			if (!(confirmationFlight
-					.isElementPresentAndDisplay(confirmationFlight
-							.getButtonBackToFlights()))) {
-				throw new ElementoNoEncontradoException(
-						nombreButtonBackToFlights);
+			try {
+
+				// Validar estén presentes los tres botones
+				if (!(confirmationFlight
+						.isElementPresentAndDisplay(confirmationFlight
+								.getButtonBackToFlights()))) {
+					throw new ElementoNoEncontradoException(
+							nombreButtonBackToFlights);
+				}
+				if (!(confirmationFlight
+						.isElementPresentAndDisplay(confirmationFlight
+								.getButtonBackToHome()))) {
+					throw new ElementoNoEncontradoException(
+							nombreButtonBackToHome);
+				}
+				if (!(confirmationFlight
+						.isElementPresentAndDisplay(confirmationFlight
+								.getButtonLogOut()))) {
+					throw new ElementoNoEncontradoException(nombreButtonLogOut);
+				}
+			} catch (ElementoNoEncontradoException e3) {
+				System.out.println(e3.getDescripcion() + e3.getMessage());
 			}
-			if (!(confirmationFlight
-					.isElementPresentAndDisplay(confirmationFlight
-							.getButtonBackToHome()))) {
-				throw new ElementoNoEncontradoException(nombreButtonBackToHome);
-			}
-			if (!(confirmationFlight
-					.isElementPresentAndDisplay(confirmationFlight
-							.getButtonLogOut()))) {
-				throw new ElementoNoEncontradoException(nombreButtonLogOut);
-			}
-		} catch (ElementoNoEncontradoException e3) {
-			System.out.println(e3.getDescripcion() + e3.getMessage());
+		} else {
+
+			throw new PaginaNoEncontradaException(confirmationFlight.getTitle());
+			// No controlamos la excepción porque el caso de prueba debe fallar
+
 		}
 
 	}

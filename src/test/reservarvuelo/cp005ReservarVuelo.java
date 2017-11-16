@@ -64,7 +64,8 @@ public class cp005ReservarVuelo extends TestBase {
 	private String cityDel = "";
 	private String stateDel = "";
 	private String postalCodeDel = "";
-	private String countryDel = "";
+	private String countryDelNoAlert = "";
+	private String countryDelAlert = "";
 
 	// Valores para seleccion en la página Confirmation Flight
 	private String eleccion = "";
@@ -156,14 +157,19 @@ public class cp005ReservarVuelo extends TestBase {
 		cityDel = excelDatosPaginas.getCellData(21, 1);
 		stateDel = excelDatosPaginas.getCellData(22, 1);
 		postalCodeDel = excelDatosPaginas.getCellData(23, 1);
-		countryDel = excelDatosPaginas.getCellData(24, 1);
+		
+		//Con este valor no se abre ninguna alerta "UNITED STATES"
+		countryDelNoAlert = excelDatosPaginas.getCellData(24, 1);
+		
+		//Con este valor se abre una alerta que hay que aceptar
+		countryDelAlert= excelDatosPaginas.getCellData(24, 2);
 
 		bookFlight.seleccionBookAFlight(firstName0, lastName0, meal0, cardType,
 				cardNumber, expCMonth, expCYear, cardFirstName, cardMiddleNane,
 				cardLastName, ticketless, address1Bill, address2Bill, cityBill,
 				stateBill, postalCodeBill, countryBill, sameAsBillingAddress,
 				address1Del, address2Del, cityDel, stateDel, postalCodeDel,
-				countryDel);
+				countryDelNoAlert, countryDelAlert);
 	}
 
 	@Test(priority = 4, dependsOnMethods = { "login" })

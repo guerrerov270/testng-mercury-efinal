@@ -10,6 +10,7 @@ import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
+import utils.PaginaNoEncontradaException;
 import utils.ExcelUtils.ExcelType;
 
 public class cp002ValidarCamposSelectFlight extends TestBase {
@@ -64,46 +65,55 @@ public class cp002ValidarCamposSelectFlight extends TestBase {
 		}
 
 		// Validar que se encuentre en la página Select a Flight: Mercury Tours
-		try {
-			// verifico los elementos en la página
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight0D()))) {
-				throw new ElementoNoEncontradoException(nombreFlight360);
+		if (driver.getTitle().contentEquals(selectFlight.getTitle())) {
+
+			try {
+				// verifico los elementos en la página
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight0D()))) {
+					throw new ElementoNoEncontradoException(nombreFlight360);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight1D()))) {
+					throw new ElementoNoEncontradoException(nombreFlight361);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight2D()))) {
+					throw new ElementoNoEncontradoException(nombreFlight362);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight3D()))) {
+					throw new ElementoNoEncontradoException(nombreFlight363);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight0R()))) {
+					throw new ElementoNoEncontradoException(nombreFlight630);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight1R()))) {
+					throw new ElementoNoEncontradoException(nombreFlight631);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight2R()))) {
+					throw new ElementoNoEncontradoException(nombreFlight632);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getRadioFlight3R()))) {
+					throw new ElementoNoEncontradoException(nombreFlight633);
+				}
+				if (!(selectFlight.isElementPresentAndDisplay(selectFlight
+						.getButtonContinue()))) {
+					throw new ElementoNoEncontradoException(
+							nombreButtonContinue);
+				}
+			} catch (ElementoNoEncontradoException e1) {
+				System.out.println(e1.getDescripcion() + e1.getMessage());
 			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight1D()))) {
-				throw new ElementoNoEncontradoException(nombreFlight361);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight2D()))) {
-				throw new ElementoNoEncontradoException(nombreFlight362);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight3D()))) {
-				throw new ElementoNoEncontradoException(nombreFlight363);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight0R()))) {
-				throw new ElementoNoEncontradoException(nombreFlight630);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight1R()))) {
-				throw new ElementoNoEncontradoException(nombreFlight631);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight2R()))) {
-				throw new ElementoNoEncontradoException(nombreFlight632);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getRadioFlight3R()))) {
-				throw new ElementoNoEncontradoException(nombreFlight633);
-			}
-			if (!(selectFlight.isElementPresentAndDisplay(selectFlight
-					.getButtonContinue()))) {
-				throw new ElementoNoEncontradoException(nombreButtonContinue);
-			}
-		} catch (ElementoNoEncontradoException e1) {
-			System.out.println(e1.getDescripcion() + e1.getMessage());
+		} else {
+
+			throw new PaginaNoEncontradaException(selectFlight.getTitle());
+			//No controlamos la excepción porque el caso de prueba debe fallar
+
 		}
 	} // Fin método ValidarCamposSelectFlight
 } // Fin clase cp002ValidarCamposSelectFlight

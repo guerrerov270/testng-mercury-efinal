@@ -10,6 +10,7 @@ import pageObjects.BookFlightPage;
 import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
+import utils.PaginaNoEncontradaException;
 import utils.ExcelUtils.ExcelType;
 
 public class cp003ValidarCamposBookFlight extends TestBase {
@@ -99,119 +100,140 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 		}
 
 		// Validar que esté en la página Book a flight
-		try {
-			// Validar los campos del área Passengers
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputFirstName()))) {
-				throw new ElementoNoEncontradoException(nombreInputFirstName);
+		if (driver.getTitle().contentEquals(bookFlight.getTitle())) {
+
+			try {
+				// Validar los campos del área Passengers
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputFirstName()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputFirstName);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputLastName()))) {
+					throw new ElementoNoEncontradoException(nombreInputLastName);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getComboMeal()))) {
+					throw new ElementoNoEncontradoException(nombreComboMeal);
+				}
+				// Validar los campos del área área Credit Card
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getComboCardType()))) {
+					throw new ElementoNoEncontradoException(nombreComboCardType);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputNumber()))) {
+					throw new ElementoNoEncontradoException(nombreInputNumber);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getComboExpirationMonth()))) {
+					throw new ElementoNoEncontradoException(
+							nombreComboExpirationMonth);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getComboExpirationYear()))) {
+					throw new ElementoNoEncontradoException(
+							nombreComboExpirationYear);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputFirstNameCard()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputFirstNameCard);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputMiddleNameCard()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputMiddleNameCard);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputLastNameCard()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputLastNameCard);
+				}
+				// Validar los campos del área área Billing address
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getCheckTicketLess()))) {
+					throw new ElementoNoEncontradoException(
+							nombreCheckTicketLess);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputBillAddress1()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputBillAddress1);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputBillAddress2()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputBillAddress2);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputBillCity()))) {
+					throw new ElementoNoEncontradoException(nombreInputBillCity);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputBillState()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputBillState);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputBillPostal()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputBillPostal);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getComboBillCountry()))) {
+					throw new ElementoNoEncontradoException(
+							nombreComboBillCountry);
+				}
+				// Validar los campos del área área Delivery address
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getCheckBillingAddress()))) {
+					throw new ElementoNoEncontradoException(
+							nombreCheckBillingAddress);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputDelAddress1()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputDelAddress1);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputDelAddress2()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputDelAddress2);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputDelCity()))) {
+					throw new ElementoNoEncontradoException(nombreInputDelCity);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputDelState()))) {
+					throw new ElementoNoEncontradoException(nombreInputDelState);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getInputDelPostal()))) {
+					throw new ElementoNoEncontradoException(
+							nombreInputDelPostal);
+				}
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getComboDelCountry()))) {
+					throw new ElementoNoEncontradoException(
+							nombreComboDelCountry);
+				}
+				// Validar el botón secure purchase
+				if (!(bookFlight.isElementPresentAndDisplay(bookFlight
+						.getButtonBuyFlights()))) {
+					throw new ElementoNoEncontradoException(
+							nombreButtonBuyFlights);
+				}
+			} catch (ElementoNoEncontradoException e3) {
+				System.out.println(e3.getDescripcion() + e3.getMessage());
 			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputLastName()))) {
-				throw new ElementoNoEncontradoException(nombreInputLastName);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getComboMeal()))) {
-				throw new ElementoNoEncontradoException(nombreComboMeal);
-			}
-			// Validar los campos del área área Credit Card
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getComboCardType()))) {
-				throw new ElementoNoEncontradoException(nombreComboCardType);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputNumber()))) {
-				throw new ElementoNoEncontradoException(nombreInputNumber);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getComboExpirationMonth()))) {
-				throw new ElementoNoEncontradoException(
-						nombreComboExpirationMonth);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getComboExpirationYear()))) {
-				throw new ElementoNoEncontradoException(
-						nombreComboExpirationYear);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputFirstNameCard()))) {
-				throw new ElementoNoEncontradoException(
-						nombreInputFirstNameCard);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputMiddleNameCard()))) {
-				throw new ElementoNoEncontradoException(
-						nombreInputMiddleNameCard);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputLastNameCard()))) {
-				throw new ElementoNoEncontradoException(nombreInputLastNameCard);
-			}
-			// Validar los campos del área área Billing address
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getCheckTicketLess()))) {
-				throw new ElementoNoEncontradoException(nombreCheckTicketLess);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputBillAddress1()))) {
-				throw new ElementoNoEncontradoException(nombreInputBillAddress1);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputBillAddress2()))) {
-				throw new ElementoNoEncontradoException(nombreInputBillAddress2);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputBillCity()))) {
-				throw new ElementoNoEncontradoException(nombreInputBillCity);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputBillState()))) {
-				throw new ElementoNoEncontradoException(nombreInputBillState);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputBillPostal()))) {
-				throw new ElementoNoEncontradoException(nombreInputBillPostal);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getComboBillCountry()))) {
-				throw new ElementoNoEncontradoException(nombreComboBillCountry);
-			}
-			// Validar los campos del área área Delivery address
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getCheckBillingAddress()))) {
-				throw new ElementoNoEncontradoException(
-						nombreCheckBillingAddress);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputDelAddress1()))) {
-				throw new ElementoNoEncontradoException(nombreInputDelAddress1);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputDelAddress2()))) {
-				throw new ElementoNoEncontradoException(nombreInputDelAddress2);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputDelCity()))) {
-				throw new ElementoNoEncontradoException(nombreInputDelCity);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputDelState()))) {
-				throw new ElementoNoEncontradoException(nombreInputDelState);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getInputDelPostal()))) {
-				throw new ElementoNoEncontradoException(nombreInputDelPostal);
-			}
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getComboDelCountry()))) {
-				throw new ElementoNoEncontradoException(nombreComboDelCountry);
-			}
-			// Validar el botón secure purchase
-			if (!(bookFlight.isElementPresentAndDisplay(bookFlight
-					.getButtonBuyFlights()))) {
-				throw new ElementoNoEncontradoException(nombreButtonBuyFlights);
-			}
-		} catch (ElementoNoEncontradoException e3) {
-			System.out.println(e3.getDescripcion() + e3.getMessage());
+		} else {
+
+			throw new PaginaNoEncontradaException(bookFlight.getTitle());
+			//No controlamos la excepción porque el caso de prueba debe fallar
+
 		}
 
 	}// Fin método ValidarCamposBookFlight
