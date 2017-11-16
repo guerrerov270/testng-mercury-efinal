@@ -1,57 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Registrar" duration-ms="36448" started-at="2017-11-16T20:48:54Z" finished-at="2017-11-16T20:49:30Z">
+  <suite name="Default suite" duration-ms="14018" started-at="2017-11-16T20:54:12Z" finished-at="2017-11-16T20:54:26Z">
     <groups>
     </groups>
-    <test name="001Validar" duration-ms="16813" started-at="2017-11-16T20:48:54Z" finished-at="2017-11-16T20:49:11Z">
-      <class name="test.registrousuario.cp001ValidarCamposRegister">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8098" started-at="2017-11-16T15:48:54Z" finished-at="2017-11-16T15:49:02Z">
+    <test name="Default test" duration-ms="14018" started-at="2017-11-16T20:54:12Z" finished-at="2017-11-16T20:54:26Z">
+      <class name="scriptSencillo.MultiplesDatos">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:scriptSencillo.MultiplesDatos@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8756" started-at="2017-11-16T15:54:12Z" finished-at="2017-11-16T15:54:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="ingresarRegistrar()[pri:0, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="ingresarRegistrar" duration-ms="4503" started-at="2017-11-16T15:49:02Z" finished-at="2017-11-16T15:49:06Z">
+        <test-method status="PASS" signature="testUntitled()[pri:0, instance:scriptSencillo.MultiplesDatos@7cd62f43]" name="testUntitled" duration-ms="4852" started-at="2017-11-16T15:54:21Z" finished-at="2017-11-16T15:54:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ingresarRegistrar -->
-        <test-method status="PASS" signature="validarCamposContact()[pri:1, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="validarCamposContact" duration-ms="1329" started-at="2017-11-16T15:49:06Z" finished-at="2017-11-16T15:49:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validarCamposContact -->
-        <test-method status="PASS" signature="validarCamposMailing()[pri:2, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="validarCamposMailing" duration-ms="1530" started-at="2017-11-16T15:49:08Z" finished-at="2017-11-16T15:49:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validarCamposMailing -->
-        <test-method status="PASS" signature="validarCamposUser()[pri:3, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="validarCamposUser" duration-ms="850" started-at="2017-11-16T15:49:09Z" finished-at="2017-11-16T15:49:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validarCamposUser -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.registrousuario.cp001ValidarCamposRegister@7cd62f43]" name="tearDown" is-config="true" duration-ms="314" started-at="2017-11-16T15:49:10Z" finished-at="2017-11-16T15:49:11Z">
+        </test-method> <!-- testUntitled -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:scriptSencillo.MultiplesDatos@7cd62f43]" name="tearDown" is-config="true" duration-ms="287" started-at="2017-11-16T15:54:26Z" finished-at="2017-11-16T15:54:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- test.registrousuario.cp001ValidarCamposRegister -->
-    </test> <!-- 001Validar -->
-    <test name="002Registrar" duration-ms="19498" started-at="2017-11-16T20:49:11Z" finished-at="2017-11-16T20:49:30Z">
-      <class name="test.registrousuario.cp002RegistrarUsuarios">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="initializeTestBaseSetup" is-config="true" duration-ms="4409" started-at="2017-11-16T15:49:11Z" finished-at="2017-11-16T15:49:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="ingresarRegistrar()[pri:0, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="ingresarRegistrar" duration-ms="1741" started-at="2017-11-16T15:49:15Z" finished-at="2017-11-16T15:49:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ingresarRegistrar -->
-        <test-method status="PASS" signature="realizarRegistro()[pri:1, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="realizarRegistro" duration-ms="13017" started-at="2017-11-16T15:49:17Z" finished-at="2017-11-16T15:49:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- realizarRegistro -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.registrousuario.cp002RegistrarUsuarios@4f7d0008]" name="tearDown" is-config="true" duration-ms="279" started-at="2017-11-16T15:49:30Z" finished-at="2017-11-16T15:49:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.registrousuario.cp002RegistrarUsuarios -->
-    </test> <!-- 002Registrar -->
-  </suite> <!-- Registrar -->
+      </class> <!-- scriptSencillo.MultiplesDatos -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

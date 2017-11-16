@@ -13,7 +13,7 @@ import pageObjects.RegistrarUsuarioPage;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
 
-public class cp002RegistrarUsuarios extends TestBase {
+public class cp002RegistrarUsuario extends TestBase {
 
 	PagesFacade facade;
 	MenuNavegacionPage menu;

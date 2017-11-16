@@ -8,7 +8,7 @@
 	</test>
 	<test name="002Registrar">
 		<classes>
-			<class name="test.registrousuario.cp002RegistrarUsuarios" />
+			<class name="test.registrousuario.cp002RegistrarUsuario" />
 		</classes>
 	</test>
 </suite>
