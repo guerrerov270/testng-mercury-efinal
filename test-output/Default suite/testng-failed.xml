@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="test.registrousuario.cp001ValidarCamposRegister">
+      <class name="test.menu.cp004ValidarLinkLateralDerecho">
         <methods>
           <include name="initializeTestBaseSetup"/>
-          <include name="validarCamposUser"/>
+          <include name="validarLinkLateralDerecho"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- test.registrousuario.cp001ValidarCamposRegister -->
+      </class> <!-- test.menu.cp004ValidarLinkLateralDerecho -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

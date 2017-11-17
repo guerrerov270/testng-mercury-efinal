@@ -29,7 +29,7 @@ public class MenuNavegacionPage extends PageBase {
 	@FindBy(how = How.LINK_TEXT, using = "PROFILE")
 	private WebElement lnkProfile;
 
-	// WebElements menú lateral
+	// WebElements menú lateral izquierdo
 	@FindBy(how = How.LINK_TEXT, using = "Home")
 	private WebElement lnkHome;
 	@FindBy(how = How.LINK_TEXT, using = "Flights")
@@ -45,6 +45,18 @@ public class MenuNavegacionPage extends PageBase {
 	@FindBy(how = How.LINK_TEXT, using = "Vacations")
 	private WebElement lnkVacations;
 
+	// WebElements menú lateral izquierdo
+	@FindBy(how = How.LINK_TEXT, using = "your destination")
+	private WebElement lnkYourDestination;
+	@FindBy(how = How.LINK_TEXT, using = "featured vacation destinations")
+	private WebElement lnkFeaturedVacatioDestinations;
+	@FindBy(how = How.LINK_TEXT, using = "Register here")
+	private WebElement lnkRegisterHere;
+	@FindBy(how = How.LINK_TEXT, using = "Business Travel @ About.com")
+	private WebElement lnkBussinessTravel;
+	@FindBy(how = How.LINK_TEXT, using = "Salon Travel")
+	private WebElement lnkSalonTravel;
+
 	/**
 	 * Métodos get, proporcionan acceso desde otras clases a los WebElements
 	 * 
@@ -52,6 +64,26 @@ public class MenuNavegacionPage extends PageBase {
 	 */
 	public WebElement getLnkSingOn() {
 		return lnkSignOn;
+	}
+
+	public WebElement getLnkYourDestination() {
+		return lnkYourDestination;
+	}
+
+	public WebElement getLnkFeaturedVacatioDestinations() {
+		return lnkFeaturedVacatioDestinations;
+	}
+
+	public WebElement getLnkRegisterHere() {
+		return lnkRegisterHere;
+	}
+
+	public WebElement getLnkBussinessTravel() {
+		return lnkBussinessTravel;
+	}
+
+	public WebElement getLnkSalonTravel() {
+		return lnkSalonTravel;
 	}
 
 	public WebElement getLnkSingOf() {

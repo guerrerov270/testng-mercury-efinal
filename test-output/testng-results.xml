@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20940" started-at="2017-11-16T23:07:49Z" finished-at="2017-11-16T23:08:10Z">
+  <suite name="Menu" duration-ms="73502" started-at="2017-11-17T05:23:20Z" finished-at="2017-11-17T05:24:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20940" started-at="2017-11-16T23:07:49Z" finished-at="2017-11-16T23:08:10Z">
+    <test name="001ValidaLinkSuperior" duration-ms="12290" started-at="2017-11-17T05:23:20Z" finished-at="2017-11-17T05:23:32Z">
       <class name="test.menu.cp001ValidarLinkSuperior">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.menu.cp001ValidarLinkSuperior@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="16720" started-at="2017-11-16T18:07:49Z" finished-at="2017-11-16T18:08:06Z">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.menu.cp001ValidarLinkSuperior@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8343" started-at="2017-11-17T00:23:20Z" finished-at="2017-11-17T00:23:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="validarLinkSuperior()[pri:0, instance:test.menu.cp001ValidarLinkSuperior@7cd62f43]" name="validarLinkSuperior" duration-ms="3762" started-at="2017-11-16T18:08:06Z" finished-at="2017-11-16T18:08:10Z">
+        <test-method status="PASS" signature="validarLinkSuperior()[pri:0, instance:test.menu.cp001ValidarLinkSuperior@7cd62f43]" name="validarLinkSuperior" duration-ms="3611" started-at="2017-11-17T00:23:28Z" finished-at="2017-11-17T00:23:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validarLinkSuperior -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.menu.cp001ValidarLinkSuperior@7cd62f43]" name="tearDown" is-config="true" duration-ms="332" started-at="2017-11-16T18:08:10Z" finished-at="2017-11-16T18:08:10Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.menu.cp001ValidarLinkSuperior@7cd62f43]" name="tearDown" is-config="true" duration-ms="257" started-at="2017-11-17T00:23:32Z" finished-at="2017-11-17T00:23:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- test.menu.cp001ValidarLinkSuperior -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- 001ValidaLinkSuperior -->
+    <test name="002ValidaLinkLateralIzquierdo" duration-ms="6976" started-at="2017-11-17T05:23:32Z" finished-at="2017-11-17T05:23:39Z">
+      <class name="test.menu.cp002ValidarLinkLateralIzquierdo">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.menu.cp002ValidarLinkLateralIzquierdo@4f7d0008]" name="initializeTestBaseSetup" is-config="true" duration-ms="4465" started-at="2017-11-17T00:23:32Z" finished-at="2017-11-17T00:23:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="validarLinkLateralIzquierdo()[pri:0, instance:test.menu.cp002ValidarLinkLateralIzquierdo@4f7d0008]" name="validarLinkLateralIzquierdo" duration-ms="2258" started-at="2017-11-17T00:23:37Z" finished-at="2017-11-17T00:23:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validarLinkLateralIzquierdo -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.menu.cp002ValidarLinkLateralIzquierdo@4f7d0008]" name="tearDown" is-config="true" duration-ms="234" started-at="2017-11-17T00:23:39Z" finished-at="2017-11-17T00:23:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.menu.cp002ValidarLinkLateralIzquierdo -->
+    </test> <!-- 002ValidaLinkLateralIzquierdo -->
+    <test name="003ValidaLinkLogin" duration-ms="46883" started-at="2017-11-17T05:23:39Z" finished-at="2017-11-17T05:24:26Z">
+      <class name="test.menu.cp003ValidarLinkDespuesLogin">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.menu.cp003ValidarLinkDespuesLogin@2f686d1f]" name="initializeTestBaseSetup" is-config="true" duration-ms="4597" started-at="2017-11-17T00:23:39Z" finished-at="2017-11-17T00:23:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="validarLinksDespuesDeLogin()[pri:0, instance:test.menu.cp003ValidarLinkDespuesLogin@2f686d1f]" name="validarLinksDespuesDeLogin" duration-ms="42024" started-at="2017-11-17T00:23:44Z" finished-at="2017-11-17T00:24:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validarLinksDespuesDeLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.menu.cp003ValidarLinkDespuesLogin@2f686d1f]" name="tearDown" is-config="true" duration-ms="226" started-at="2017-11-17T00:24:26Z" finished-at="2017-11-17T00:24:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.menu.cp003ValidarLinkDespuesLogin -->
+    </test> <!-- 003ValidaLinkLogin -->
+    <test name="004ValidaLinkLateralDerecho" duration-ms="7094" started-at="2017-11-17T05:24:26Z" finished-at="2017-11-17T05:24:33Z">
+      <class name="test.menu.cp004ValidarLinkLateralDerecho">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.menu.cp004ValidarLinkLateralDerecho@e45f292]" name="initializeTestBaseSetup" is-config="true" duration-ms="4738" started-at="2017-11-17T00:24:26Z" finished-at="2017-11-17T00:24:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="validarLinkLateralDerecho()[pri:0, instance:test.menu.cp004ValidarLinkLateralDerecho@e45f292]" name="validarLinkLateralDerecho" duration-ms="2066" started-at="2017-11-17T00:24:31Z" finished-at="2017-11-17T00:24:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validarLinkLateralDerecho -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.menu.cp004ValidarLinkLateralDerecho@e45f292]" name="tearDown" is-config="true" duration-ms="274" started-at="2017-11-17T00:24:33Z" finished-at="2017-11-17T00:24:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.menu.cp004ValidarLinkLateralDerecho -->
+    </test> <!-- 004ValidaLinkLateralDerecho -->
+  </suite> <!-- Menu -->
 </testng-results>

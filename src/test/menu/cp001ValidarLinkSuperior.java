@@ -3,7 +3,6 @@ package test.menu;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestBase;
@@ -21,16 +20,15 @@ public class cp001ValidarLinkSuperior extends TestBase {
 	private String lnkRegister = "";
 	private String lnkSupport = "";
 	private String lnkContact = "";
-
 	// Utilidad para el manejo de excel
 	static ExcelUtils excelLinksMenu;
 
 	@Test
-	public void validarLinkSuperior() throws FileNotFoundException, IOException {
+	public void validarLinkSuperior() {
 
-		facade = new PagesFacade();
-		// Se crea la instancia para manejar el archivo LinksMenu.xlsx
 		try {
+			facade = new PagesFacade();
+			// Se crea la instancia para manejar el archivo LinksMenu.xlsx
 			excelLinksMenu = new ExcelUtils("LinksMenu.xlsx", ExcelType.XLSX);
 			menu = facade.getMenuPage();
 

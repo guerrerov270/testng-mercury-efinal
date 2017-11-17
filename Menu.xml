@@ -6,14 +6,19 @@
 			<class name="test.menu.cp001ValidarLinkSuperior" />
 		</classes>
 	</test>
-	<test name="002ValidaLinkLateral">
+	<test name="002ValidaLinkLateralIzquierdo">
 		<classes>
-			<class name="test.menu.cp002ValidarLinkLateral" />
+			<class name="test.menu.cp002ValidarLinkLateralIzquierdo" />
 		</classes>
 	</test>
 	<test name="003ValidaLinkLogin">
 		<classes>
 			<class name="test.menu.cp003ValidarLinkDespuesLogin" />
+		</classes>
+	</test>
+	<test name="004ValidaLinkLateralDerecho">
+		<classes>
+			<class name="test.menu.cp004ValidarLinkLateralDerecho" />
 		</classes>
 	</test>
 </suite>
