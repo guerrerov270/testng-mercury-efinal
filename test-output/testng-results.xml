@@ -1,25 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="21" passed="21">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62240" started-at="2017-11-17T18:13:27Z" finished-at="2017-11-17T18:14:29Z">
+  <suite name="ReservarVuelo" duration-ms="224969" started-at="2017-11-17T20:50:02Z" finished-at="2017-11-17T20:53:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="62240" started-at="2017-11-17T18:13:27Z" finished-at="2017-11-17T18:14:29Z">
-      <class name="test.registrousuario.cp003RegistrarMultiplesUsuarios">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.registrousuario.cp003RegistrarMultiplesUsuarios@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8984" started-at="2017-11-17T13:13:27Z" finished-at="2017-11-17T13:13:36Z">
+    <test name="001ValidarCamposFindFlight" duration-ms="20864" started-at="2017-11-17T20:50:02Z" finished-at="2017-11-17T20:50:23Z">
+      <class name="test.reservarvuelo.cp001ValidarCamposFindFlight">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8371" started-at="2017-11-17T15:50:02Z" finished-at="2017-11-17T15:50:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="realizarRegistroMultiple()[pri:0, instance:test.registrousuario.cp003RegistrarMultiplesUsuarios@7cd62f43]" name="realizarRegistroMultiple" duration-ms="52870" started-at="2017-11-17T13:13:36Z" finished-at="2017-11-17T13:14:29Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="login" duration-ms="8510" started-at="2017-11-17T15:50:11Z" finished-at="2017-11-17T15:50:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- realizarRegistroMultiple -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.registrousuario.cp003RegistrarMultiplesUsuarios@7cd62f43]" name="tearDown" is-config="true" duration-ms="286" started-at="2017-11-17T13:14:29Z" finished-at="2017-11-17T13:14:29Z">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="ValidarCamposFindFlight()[pri:1, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="ValidarCamposFindFlight" duration-ms="3635" started-at="2017-11-17T15:50:19Z" depends-on-methods="test.reservarvuelo.cp001ValidarCamposFindFlight.login" finished-at="2017-11-17T15:50:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidarCamposFindFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp001ValidarCamposFindFlight@7cd62f43]" name="tearDown" is-config="true" duration-ms="232" started-at="2017-11-17T15:50:23Z" finished-at="2017-11-17T15:50:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- test.registrousuario.cp003RegistrarMultiplesUsuarios -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- test.reservarvuelo.cp001ValidarCamposFindFlight -->
+    </test> <!-- 001ValidarCamposFindFlight -->
+    <test name="002ValidarCamposSelectFlight" duration-ms="14664" started-at="2017-11-17T20:50:24Z" finished-at="2017-11-17T20:50:38Z">
+      <class name="test.reservarvuelo.cp002ValidarCamposSelectFlight">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp002ValidarCamposSelectFlight@4f7d0008]" name="initializeTestBaseSetup" is-config="true" duration-ms="4479" started-at="2017-11-17T15:50:24Z" finished-at="2017-11-17T15:50:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp002ValidarCamposSelectFlight@4f7d0008]" name="login" duration-ms="6337" started-at="2017-11-17T15:50:28Z" finished-at="2017-11-17T15:50:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="ValidarCamposSelectFlight()[pri:1, instance:test.reservarvuelo.cp002ValidarCamposSelectFlight@4f7d0008]" name="ValidarCamposSelectFlight" duration-ms="3549" started-at="2017-11-17T15:50:34Z" depends-on-methods="test.reservarvuelo.cp002ValidarCamposSelectFlight.login" finished-at="2017-11-17T15:50:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidarCamposSelectFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp002ValidarCamposSelectFlight@4f7d0008]" name="tearDown" is-config="true" duration-ms="272" started-at="2017-11-17T15:50:38Z" finished-at="2017-11-17T15:50:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp002ValidarCamposSelectFlight -->
+    </test> <!-- 002ValidarCamposSelectFlight -->
+    <test name="003ValidarCamposBookFlight" duration-ms="18638" started-at="2017-11-17T20:50:38Z" finished-at="2017-11-17T20:50:57Z">
+      <class name="test.reservarvuelo.cp003ValidarCamposBookFlight">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp003ValidarCamposBookFlight@3fee9989]" name="initializeTestBaseSetup" is-config="true" duration-ms="4675" started-at="2017-11-17T15:50:38Z" finished-at="2017-11-17T15:50:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp003ValidarCamposBookFlight@3fee9989]" name="login" duration-ms="5282" started-at="2017-11-17T15:50:43Z" finished-at="2017-11-17T15:50:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="ValidarCamposBookFlight()[pri:1, instance:test.reservarvuelo.cp003ValidarCamposBookFlight@3fee9989]" name="ValidarCamposBookFlight" duration-ms="8410" started-at="2017-11-17T15:50:48Z" depends-on-methods="test.reservarvuelo.cp003ValidarCamposBookFlight.login" finished-at="2017-11-17T15:50:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidarCamposBookFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp003ValidarCamposBookFlight@3fee9989]" name="tearDown" is-config="true" duration-ms="227" started-at="2017-11-17T15:50:57Z" finished-at="2017-11-17T15:50:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp003ValidarCamposBookFlight -->
+    </test> <!-- 003ValidarCamposBookFlight -->
+    <test name="004ValidarCamposConfirmationFlight" duration-ms="15693" started-at="2017-11-17T20:50:57Z" finished-at="2017-11-17T20:51:13Z">
+      <class name="test.reservarvuelo.cp004ValidarCamposConfirmationFlight">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@31a5c39e]" name="initializeTestBaseSetup" is-config="true" duration-ms="4876" started-at="2017-11-17T15:50:57Z" finished-at="2017-11-17T15:51:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@31a5c39e]" name="login" duration-ms="5390" started-at="2017-11-17T15:51:02Z" finished-at="2017-11-17T15:51:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="ValidarCamposConfirmationFlight()[pri:1, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@31a5c39e]" name="ValidarCamposConfirmationFlight" duration-ms="5107" started-at="2017-11-17T15:51:07Z" depends-on-methods="test.reservarvuelo.cp004ValidarCamposConfirmationFlight.login" finished-at="2017-11-17T15:51:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidarCamposConfirmationFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp004ValidarCamposConfirmationFlight@31a5c39e]" name="tearDown" is-config="true" duration-ms="290" started-at="2017-11-17T15:51:12Z" finished-at="2017-11-17T15:51:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp004ValidarCamposConfirmationFlight -->
+    </test> <!-- 004ValidarCamposConfirmationFlight -->
+    <test name="005ReservarVueloCorrecto" duration-ms="48212" started-at="2017-11-17T20:51:13Z" finished-at="2017-11-17T20:52:01Z">
+      <class name="test.reservarvuelo.cp005ReservarVuelo">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="initializeTestBaseSetup" is-config="true" duration-ms="4906" started-at="2017-11-17T15:51:13Z" finished-at="2017-11-17T15:51:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="login" duration-ms="5281" started-at="2017-11-17T15:51:18Z" finished-at="2017-11-17T15:51:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="diligenciarFindFlight()[pri:1, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="diligenciarFindFlight" duration-ms="8758" started-at="2017-11-17T15:51:23Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-17T15:51:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarFindFlight -->
+        <test-method status="PASS" signature="diligenciarSelectFlight()[pri:2, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="diligenciarSelectFlight" duration-ms="2793" started-at="2017-11-17T15:51:32Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-17T15:51:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarSelectFlight -->
+        <test-method status="PASS" signature="diligenciarBookFlight()[pri:3, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="diligenciarBookFlight" duration-ms="24396" started-at="2017-11-17T15:51:34Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-17T15:51:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarBookFlight -->
+        <test-method status="PASS" signature="verificarConfirmationFlight()[pri:4, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="verificarConfirmationFlight" duration-ms="1789" started-at="2017-11-17T15:51:59Z" depends-on-methods="test.reservarvuelo.cp005ReservarVuelo.login" finished-at="2017-11-17T15:52:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarConfirmationFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp005ReservarVuelo@59494225]" name="tearDown" is-config="true" duration-ms="218" started-at="2017-11-17T15:52:01Z" finished-at="2017-11-17T15:52:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp005ReservarVuelo -->
+    </test> <!-- 005ReservarVueloCorrecto -->
+    <test name="006ReservarVueloCruisesCorrecto" duration-ms="49825" started-at="2017-11-17T20:52:01Z" finished-at="2017-11-17T20:52:51Z">
+      <class name="test.reservarvuelo.cp006ReservarVueloCruises">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="initializeTestBaseSetup" is-config="true" duration-ms="4921" started-at="2017-11-17T15:52:01Z" finished-at="2017-11-17T15:52:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="login" duration-ms="4993" started-at="2017-11-17T15:52:06Z" finished-at="2017-11-17T15:52:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="ingresarPorCruises()[pri:1, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="ingresarPorCruises" duration-ms="2647" started-at="2017-11-17T15:52:11Z" depends-on-methods="test.reservarvuelo.cp006ReservarVueloCruises.login" finished-at="2017-11-17T15:52:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ingresarPorCruises -->
+        <test-method status="PASS" signature="diligenciarFindFlight()[pri:2, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="diligenciarFindFlight" duration-ms="8462" started-at="2017-11-17T15:52:13Z" depends-on-methods="test.reservarvuelo.cp006ReservarVueloCruises.login" finished-at="2017-11-17T15:52:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarFindFlight -->
+        <test-method status="PASS" signature="diligenciarSelectFlight()[pri:3, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="diligenciarSelectFlight" duration-ms="2849" started-at="2017-11-17T15:52:22Z" depends-on-methods="test.reservarvuelo.cp006ReservarVueloCruises.login" finished-at="2017-11-17T15:52:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarSelectFlight -->
+        <test-method status="PASS" signature="diligenciarBookFlight()[pri:4, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="diligenciarBookFlight" duration-ms="23919" started-at="2017-11-17T15:52:25Z" depends-on-methods="test.reservarvuelo.cp006ReservarVueloCruises.login" finished-at="2017-11-17T15:52:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarBookFlight -->
+        <test-method status="PASS" signature="verificarConfirmationFlight()[pri:5, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="verificarConfirmationFlight" duration-ms="1625" started-at="2017-11-17T15:52:49Z" depends-on-methods="test.reservarvuelo.cp006ReservarVueloCruises.login" finished-at="2017-11-17T15:52:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarConfirmationFlight -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp006ReservarVueloCruises@ff5b51f]" name="tearDown" is-config="true" duration-ms="318" started-at="2017-11-17T15:52:50Z" finished-at="2017-11-17T15:52:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp006ReservarVueloCruises -->
+    </test> <!-- 006ReservarVueloCruisesCorrecto -->
+    <test name="007ReservarVueloMultiplesPasajeros" duration-ms="56635" started-at="2017-11-17T20:52:51Z" finished-at="2017-11-17T20:53:47Z">
+      <class name="test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@29ca901e]" name="initializeTestBaseSetup" is-config="true" duration-ms="4668" started-at="2017-11-17T15:52:51Z" finished-at="2017-11-17T15:52:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestBaseSetup -->
+        <test-method status="PASS" signature="login()[pri:0, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@29ca901e]" name="login" duration-ms="5035" started-at="2017-11-17T15:52:55Z" finished-at="2017-11-17T15:53:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="diligenciarPaginasRestantes()[pri:1, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@29ca901e]" name="diligenciarPaginasRestantes" duration-ms="46583" started-at="2017-11-17T15:53:00Z" depends-on-methods="test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros.login" finished-at="2017-11-17T15:53:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- diligenciarPaginasRestantes -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros@29ca901e]" name="tearDown" is-config="true" duration-ms="320" started-at="2017-11-17T15:53:47Z" finished-at="2017-11-17T15:53:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.reservarvuelo.cp007ReservarVueloMultiplesPasajeros -->
+    </test> <!-- 007ReservarVueloMultiplesPasajeros -->
+  </suite> <!-- ReservarVuelo -->
 </testng-results>

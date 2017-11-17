@@ -72,7 +72,8 @@ public class cp005ReservarVuelo extends TestBase {
 	private String eleccion = "";
 
 	@Test
-	public void login() throws FileNotFoundException, IOException, PaginaNoEncontradaException {
+	public void login() throws FileNotFoundException, IOException,
+			PaginaNoEncontradaException {
 
 		facade = new PagesFacade();
 		facade.hacerLogin();
@@ -158,12 +159,12 @@ public class cp005ReservarVuelo extends TestBase {
 		cityDel = excelDatosPaginas.getCellData(21, 1);
 		stateDel = excelDatosPaginas.getCellData(22, 1);
 		postalCodeDel = excelDatosPaginas.getCellData(23, 1);
-		
-		//Con este valor no se abre ninguna alerta "UNITED STATES"
+
+		// Con este valor no se abre ninguna alerta "UNITED STATES"
 		countryDelNoAlert = excelDatosPaginas.getCellData(24, 1);
-		
-		//Con este valor se abre una alerta que hay que aceptar
-		countryDelAlert= excelDatosPaginas.getCellData(24, 2);
+
+		// Con este valor se abre una alerta que hay que aceptar
+		countryDelAlert = excelDatosPaginas.getCellData(24, 2);
 
 		bookFlight.seleccionBookAFlight(firstName0, lastName0, meal0, cardType,
 				cardNumber, expCMonth, expCYear, cardFirstName, cardMiddleNane,

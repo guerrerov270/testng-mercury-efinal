@@ -33,7 +33,7 @@ public class SignOnPage extends PageBase {
 	@FindBy(how = How.NAME, using = "password")
 	private WebElement inputPassword;
 	// Elemento web submit
-	@FindBy(how = How.CSS, using = "img[src='/images/forms/submit.gif']")
+	@FindBy(how = How.NAME, using = "login")
 	private WebElement buttonSingIn;
 
 	// Getters
