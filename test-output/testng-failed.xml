@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="test.autenticacion.cp004ValidarCamposSignOn">
+      <class name="test.registrousuario.cp003RegistrarMultiplesUsuarios">
         <methods>
+          <include name="realizarRegistroMultiple"/>
           <include name="initializeTestBaseSetup"/>
-          <include name="verificarCamposLoginSignOn"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- test.autenticacion.cp004ValidarCamposSignOn -->
+      </class> <!-- test.registrousuario.cp003RegistrarMultiplesUsuarios -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

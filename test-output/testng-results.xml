@@ -1,105 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Autenticacion" duration-ms="103891" started-at="2017-11-17T06:27:31Z" finished-at="2017-11-17T06:29:15Z">
+  <suite name="Default suite" duration-ms="62240" started-at="2017-11-17T18:13:27Z" finished-at="2017-11-17T18:14:29Z">
     <groups>
     </groups>
-    <test name="001ValidaCampos" duration-ms="12625" started-at="2017-11-17T06:27:31Z" finished-at="2017-11-17T06:27:44Z">
-      <class name="test.autenticacion.cp001ValidarCampos">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.autenticacion.cp001ValidarCampos@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8587" started-at="2017-11-17T01:27:31Z" finished-at="2017-11-17T01:27:40Z">
+    <test name="Default test" duration-ms="62240" started-at="2017-11-17T18:13:27Z" finished-at="2017-11-17T18:14:29Z">
+      <class name="test.registrousuario.cp003RegistrarMultiplesUsuarios">
+        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.registrousuario.cp003RegistrarMultiplesUsuarios@7cd62f43]" name="initializeTestBaseSetup" is-config="true" duration-ms="8984" started-at="2017-11-17T13:13:27Z" finished-at="2017-11-17T13:13:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="verificarCamposLogin()[pri:0, instance:test.autenticacion.cp001ValidarCampos@7cd62f43]" name="verificarCamposLogin" duration-ms="3735" started-at="2017-11-17T01:27:40Z" finished-at="2017-11-17T01:27:44Z">
+        <test-method status="PASS" signature="realizarRegistroMultiple()[pri:0, instance:test.registrousuario.cp003RegistrarMultiplesUsuarios@7cd62f43]" name="realizarRegistroMultiple" duration-ms="52870" started-at="2017-11-17T13:13:36Z" finished-at="2017-11-17T13:14:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verificarCamposLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.autenticacion.cp001ValidarCampos@7cd62f43]" name="tearDown" is-config="true" duration-ms="191" started-at="2017-11-17T01:27:44Z" finished-at="2017-11-17T01:27:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.autenticacion.cp001ValidarCampos -->
-    </test> <!-- 001ValidaCampos -->
-    <test name="002LoginCorrecto" duration-ms="20035" started-at="2017-11-17T06:27:44Z" finished-at="2017-11-17T06:28:04Z">
-      <class name="test.autenticacion.cp002LoginMercuryCorrecto">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.autenticacion.cp002LoginMercuryCorrecto@4f7d0008]" name="initializeTestBaseSetup" is-config="true" duration-ms="4615" started-at="2017-11-17T01:27:44Z" finished-at="2017-11-17T01:27:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginCorrecto()[pri:0, instance:test.autenticacion.cp002LoginMercuryCorrecto@4f7d0008]" name="loginCorrecto" duration-ms="15185" started-at="2017-11-17T01:27:49Z" finished-at="2017-11-17T01:28:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCorrecto -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.autenticacion.cp002LoginMercuryCorrecto@4f7d0008]" name="tearDown" is-config="true" duration-ms="205" started-at="2017-11-17T01:28:04Z" finished-at="2017-11-17T01:28:04Z">
+        </test-method> <!-- realizarRegistroMultiple -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.registrousuario.cp003RegistrarMultiplesUsuarios@7cd62f43]" name="tearDown" is-config="true" duration-ms="286" started-at="2017-11-17T13:14:29Z" finished-at="2017-11-17T13:14:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- test.autenticacion.cp002LoginMercuryCorrecto -->
-    </test> <!-- 002LoginCorrecto -->
-    <test name="003LoginIncorrecto" duration-ms="8340" started-at="2017-11-17T06:28:04Z" finished-at="2017-11-17T06:28:13Z">
-      <class name="test.autenticacion.cp003LoginMercuryIncorrecto">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.autenticacion.cp003LoginMercuryIncorrecto@2f686d1f]" name="initializeTestBaseSetup" is-config="true" duration-ms="4636" started-at="2017-11-17T01:28:04Z" finished-at="2017-11-17T01:28:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginIncorrecto()[pri:0, instance:test.autenticacion.cp003LoginMercuryIncorrecto@2f686d1f]" name="loginIncorrecto" duration-ms="3516" started-at="2017-11-17T01:28:09Z" finished-at="2017-11-17T01:28:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginIncorrecto -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.autenticacion.cp003LoginMercuryIncorrecto@2f686d1f]" name="tearDown" is-config="true" duration-ms="171" started-at="2017-11-17T01:28:12Z" finished-at="2017-11-17T01:28:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.autenticacion.cp003LoginMercuryIncorrecto -->
-    </test> <!-- 003LoginIncorrecto -->
-    <test name="004ValidaCamposSignOn" duration-ms="15572" started-at="2017-11-17T06:28:13Z" finished-at="2017-11-17T06:28:28Z">
-      <class name="test.autenticacion.cp004ValidarCamposSignOn">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.autenticacion.cp004ValidarCamposSignOn@e45f292]" name="initializeTestBaseSetup" is-config="true" duration-ms="5037" started-at="2017-11-17T01:28:13Z" finished-at="2017-11-17T01:28:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="verificarCamposLoginSignOn()[pri:0, instance:test.autenticacion.cp004ValidarCamposSignOn@e45f292]" name="verificarCamposLoginSignOn" duration-ms="10243" started-at="2017-11-17T01:28:18Z" finished-at="2017-11-17T01:28:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verificarCamposLoginSignOn -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.autenticacion.cp004ValidarCamposSignOn@e45f292]" name="tearDown" is-config="true" duration-ms="270" started-at="2017-11-17T01:28:28Z" finished-at="2017-11-17T01:28:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.autenticacion.cp004ValidarCamposSignOn -->
-    </test> <!-- 004ValidaCamposSignOn -->
-    <test name="005SignOnCorrecto" duration-ms="36952" started-at="2017-11-17T06:28:28Z" finished-at="2017-11-17T06:29:05Z">
-      <class name="test.autenticacion.cp005LoginSignOnCorrecto">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.autenticacion.cp005LoginSignOnCorrecto@72d818d1]" name="initializeTestBaseSetup" is-config="true" duration-ms="5344" started-at="2017-11-17T01:28:28Z" finished-at="2017-11-17T01:28:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginCorrecto()[pri:0, instance:test.autenticacion.cp005LoginSignOnCorrecto@72d818d1]" name="loginCorrecto" duration-ms="31391" started-at="2017-11-17T01:28:34Z" finished-at="2017-11-17T01:29:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginCorrecto -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.autenticacion.cp005LoginSignOnCorrecto@72d818d1]" name="tearDown" is-config="true" duration-ms="206" started-at="2017-11-17T01:29:05Z" finished-at="2017-11-17T01:29:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.autenticacion.cp005LoginSignOnCorrecto -->
-    </test> <!-- 005SignOnCorrecto -->
-    <test name="006SignOnIncorrecto" duration-ms="9920" started-at="2017-11-17T06:29:05Z" finished-at="2017-11-17T06:29:15Z">
-      <class name="test.autenticacion.cp006LoginSignOnIncorrecto">
-        <test-method status="PASS" signature="initializeTestBaseSetup()[pri:0, instance:test.autenticacion.cp006LoginSignOnIncorrecto@4566e5bd]" name="initializeTestBaseSetup" is-config="true" duration-ms="4868" started-at="2017-11-17T01:29:05Z" finished-at="2017-11-17T01:29:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeTestBaseSetup -->
-        <test-method status="PASS" signature="loginIncorrecto()[pri:0, instance:test.autenticacion.cp006LoginSignOnIncorrecto@4566e5bd]" name="loginIncorrecto" duration-ms="4847" started-at="2017-11-17T01:29:10Z" finished-at="2017-11-17T01:29:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginIncorrecto -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.autenticacion.cp006LoginSignOnIncorrecto@4566e5bd]" name="tearDown" is-config="true" duration-ms="194" started-at="2017-11-17T01:29:15Z" finished-at="2017-11-17T01:29:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.autenticacion.cp006LoginSignOnIncorrecto -->
-    </test> <!-- 006SignOnIncorrecto -->
-  </suite> <!-- Autenticacion -->
+      </class> <!-- test.registrousuario.cp003RegistrarMultiplesUsuarios -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

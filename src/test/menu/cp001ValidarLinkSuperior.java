@@ -41,13 +41,13 @@ public class cp001ValidarLinkSuperior extends TestBase {
 			if (!(menu.getTextElement(menu.getLnkSingOn(), lnkSingOn))) {
 				throw new ElementoNoEncontradoException(lnkSingOn);
 			}
-			if (!(menu.getTextElement(menu.getLnkSingOn(), lnkSingOn))) {
+			if (!(menu.getTextElement(menu.getLnkRegister(), lnkRegister))) {
 				throw new ElementoNoEncontradoException(lnkRegister);
 			}
-			if (!(menu.getTextElement(menu.getLnkSingOn(), lnkSupport))) {
+			if (!(menu.getTextElement(menu.getLnkSupport(), lnkSupport))) {
 				throw new ElementoNoEncontradoException(lnkSupport);
 			}
-			if (!(menu.getTextElement(menu.getLnkSingOn(), lnkContact))) {
+			if (!(menu.getTextElement(menu.getLnkContact(), lnkContact))) {
 				throw new ElementoNoEncontradoException(lnkContact);
 			}
 

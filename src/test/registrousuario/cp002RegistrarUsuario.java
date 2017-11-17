@@ -84,4 +84,4 @@ public class cp002RegistrarUsuario extends TestBase {
 		}
 
 	}// Fin método realizarRegistro
-}
+} // Fin clase
