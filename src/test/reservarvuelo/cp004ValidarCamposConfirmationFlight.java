@@ -23,7 +23,7 @@ public class cp004ValidarCamposConfirmationFlight extends TestBase {
 	private String nombreButtonLogOut = "";
 
 	@Test
-	public void login() throws FileNotFoundException, IOException {
+	public void login() throws FileNotFoundException, IOException, PaginaNoEncontradaException {
 
 		facade = new PagesFacade();
 		facade.hacerLogin();

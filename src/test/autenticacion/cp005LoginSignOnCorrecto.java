@@ -1,24 +1,25 @@
 package test.autenticacion;
 
-import org.testng.Assert;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import pageObjects.FindFlightPage;
-import pageObjects.LoginPage;
+import pageObjects.PagesFacade;
+import utils.PaginaNoEncontradaException;
 
 public class cp005LoginSignOnCorrecto extends TestBase {
 
-	protected LoginPage login;
-	protected FindFlightPage findFlight;
-	private String pageTitleIndex = "Welcome: Mercury Tours";
-	private String pageFindFlight = "Find a Flight: Mercury Tours";
-	private String userName="tutorial";
-	private String password="tutorial";
-	
-	
+	PagesFacade facade;
+
 	@Test
-	public void loginCorrecto(){
-		
+	public void loginCorrecto() throws FileNotFoundException, IOException,
+			PaginaNoEncontradaException {
+
+		facade = new PagesFacade();
+		facade.irASignOn();
+		facade.hacerLogin();
+
 	}
 }

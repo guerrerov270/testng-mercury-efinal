@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Autenticacion]">
+  <test name="001ValidaCampos(failed)">
+    <classes>
+      <class name="test.autenticacion.cp001ValidarCampos">
+        <methods>
+          <include name="initializeTestBaseSetup"/>
+          <include name="verificarCamposLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- test.autenticacion.cp001ValidarCampos -->
+    </classes>
+  </test> <!-- 001ValidaCampos(failed) -->
+</suite> <!-- Failed suite [Autenticacion] -->

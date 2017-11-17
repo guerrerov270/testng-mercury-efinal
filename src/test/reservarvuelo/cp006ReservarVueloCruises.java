@@ -15,6 +15,7 @@ import pageObjects.PagesFacade;
 import pageObjects.SelectFlightPage;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
+import utils.PaginaNoEncontradaException;
 
 public class cp006ReservarVueloCruises extends TestBase {
 
@@ -75,7 +76,7 @@ public class cp006ReservarVueloCruises extends TestBase {
 	private String eleccion = "";
 
 	@Test
-	public void login() throws FileNotFoundException, IOException {
+	public void login() throws FileNotFoundException, IOException, PaginaNoEncontradaException {
 
 		facade = new PagesFacade();
 		facade.hacerLogin();

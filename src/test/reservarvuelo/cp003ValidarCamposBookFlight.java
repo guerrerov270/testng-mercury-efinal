@@ -45,7 +45,7 @@ public class cp003ValidarCamposBookFlight extends TestBase {
 	private String nombreButtonBuyFlights = "";
 
 	@Test
-	public void login() throws FileNotFoundException, IOException {
+	public void login() throws FileNotFoundException, IOException, PaginaNoEncontradaException {
 
 		facade = new PagesFacade();
 		facade.hacerLogin();

@@ -8,11 +8,13 @@ import org.openqa.selenium.support.How;
 import base.PageBase;
 
 /**
- * Clase que contiene los WebElements de http://newtours.demoaut.com/mercurysignon.php
+ * Clase que contiene los WebElements de
+ * http://newtours.demoaut.com/mercurysignon.php
+ * 
  * @author anamariaquinteroleal
  *
  */
-public class SignOnPage extends PageBase{
+public class SignOnPage extends PageBase {
 
 	/**
 	 * @param driver
@@ -21,31 +23,36 @@ public class SignOnPage extends PageBase{
 	public SignOnPage(WebDriver driver, String pageTitle) {
 		super(driver, pageTitle);
 	}
-	//WebElements
-	
-	//Elemento web User Name
-	@FindBy(how=How.NAME, using = "")
+
+	// WebElements
+
+	// Elemento web User Name
+	@FindBy(how = How.NAME, using = "userName")
 	private WebElement inputUserName;
-	//Elemento web Password
-	@FindBy(how=How.NAME, using = "")
+	// Elemento web Password
+	@FindBy(how = How.NAME, using = "password")
 	private WebElement inputPassword;
-	//Elemento web User Name
-	@FindBy(how=How.NAME, using = "")
+	// Elemento web submit
+	@FindBy(how = How.CSS, using = "img[src='/images/forms/submit.gif']")
 	private WebElement buttonSingIn;
-	
-	//Getters
-	
+
+	// Getters
+
 	public WebElement getInputUserName() {
 		return inputUserName;
 	}
+
 	public WebElement getInputPassword() {
 		return inputPassword;
 	}
+
 	public WebElement getButtonSingIn() {
 		return buttonSingIn;
 	}
-	
-	public void loginMercuryTours(String userName, String password){
-		//Completar
+
+	public void loginMercuryTours(String userName, String password) {
+		sendText(inputUserName, userName);
+		sendText(inputPassword, password);
+		clickButtonLink(buttonSingIn);
 	}
 }

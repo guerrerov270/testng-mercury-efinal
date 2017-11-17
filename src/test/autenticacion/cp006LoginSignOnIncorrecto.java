@@ -1,24 +1,22 @@
 package test.autenticacion;
 
-import org.testng.Assert;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import base.TestBase;
-import pageObjects.FindFlightPage;
-import pageObjects.LoginPage;
-import pageObjects.MenuNavegacionPage;
+import pageObjects.PagesFacade;
 
 public class cp006LoginSignOnIncorrecto extends TestBase {
 
-	protected MenuNavegacionPage menuNavegacon;
-	protected LoginPage login;
-	private String pageTitleIndex = "Welcome: Mercury Tours";
-	private String userName="home";
-	private String password="colombia";
-	
-	
+	PagesFacade facade;
+
 	@Test
-	public void loginIncorrecto(){
-		
+	public void loginIncorrecto() throws FileNotFoundException, IOException {
+		facade = new PagesFacade();
+		facade.irASignOn();
+		facade.hacerLoginIncorrecto();
+
 	}
 }

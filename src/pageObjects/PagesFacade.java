@@ -7,6 +7,7 @@ import base.TestBase;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
 import utils.LoginUtil;
+import utils.PaginaNoEncontradaException;
 
 /**
  * Clase Fachada que me permite reducir la complejidad de las relaciones entre
@@ -57,8 +58,12 @@ public class PagesFacade {
 				excelTitulosPaginas.getCellData(6, 0));
 		menuPage = new MenuNavegacionPage(test.getDriver(),
 				excelTitulosPaginas.getCellData(1, 0));
+		loginPage = new LoginPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(1, 0));
 		registrarPage = new RegistrarUsuarioPage(test.getDriver(),
 				excelTitulosPaginas.getCellData(7, 0));
+		signOnPage = new SignOnPage(test.getDriver(),
+				excelTitulosPaginas.getCellData(8, 0));
 
 	}
 
@@ -101,17 +106,30 @@ public class PagesFacade {
 		menuPage.clickButtonLink(menuPage.getLnkRegister());
 	}
 
+	public void irASignOn() {
+		menuPage.clickButtonLink(menuPage.getLnkSingOn());
+
+	}
+
 	/**
 	 * Realiza el proceso de login en MercuryTours a través de una instancia de
 	 * Login Util, esto con el fin de quitar la instancia de login que hay en
 	 * cada caso de prueba y realizra la autenticación usando la instancia de
 	 * PagesFacade ya existente.
+	 * 
+	 * @throws PaginaNoEncontradaException
 	 */
-	public void hacerLogin() {
+	public void hacerLogin() throws PaginaNoEncontradaException {
 
 		login = new LoginUtil();
 		login.hacerLogin();
 
+	}
+
+	public void hacerLoginIncorrecto() {
+
+		login = new LoginUtil();
+		login.hacerLoginIncorrecto();
 	}
 
 	public FindFlightPage getFindFlight() {

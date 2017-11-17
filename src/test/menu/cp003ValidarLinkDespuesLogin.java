@@ -11,6 +11,7 @@ import pageObjects.PagesFacade;
 import utils.ElementoNoEncontradoException;
 import utils.ExcelUtils;
 import utils.ExcelUtils.ExcelType;
+import utils.PaginaNoEncontradaException;
 
 public class cp003ValidarLinkDespuesLogin extends TestBase {
 
@@ -25,7 +26,7 @@ public class cp003ValidarLinkDespuesLogin extends TestBase {
 	static ExcelUtils excelLinksMenu;
 
 	@Test
-	public void validarLinksDespuesDeLogin() {
+	public void validarLinksDespuesDeLogin() throws PaginaNoEncontradaException {
 
 		try {
 			facade = new PagesFacade();
